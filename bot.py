@@ -12,7 +12,7 @@ bot.set_my_commands(
         telebot.types.BotCommand("restart", "Перезагружает бота🔄"),
     ])
 
-@bot.callback_query_handler(func=lambda call: call.data in ['but','bt1', 'bt2', 'bt3', 'bt4', 'bt5', 'bt6', 'bt7', 'bt8', 'bt9', 'bt10', 'bt11', 'bt12', 'bt13', 'bt14', 'bt15', 'bt16', 'bt17', 'bt18', 'bt19', 'bt20', 'bt21', 'bt22', 'bt23'] )
+@bot.callback_query_handler(func=lambda call: call.data in ['bt1', 'bt2', 'bt3', 'bt4', 'bt5', 'bt6', 'bt7', 'bt8', 'bt9', 'bt10', 'bt11', 'bt12', 'bt13', 'bt14', 'bt15', 'bt16', 'bt17', 'bt18', 'bt19', 'bt20', 'bt21', 'bt22', 'bt23', 'bt24', 'bt25', 'bt26', 'bt27'] )
 def back_to_start(call):
     chat_id = call.message.chat.id
     bot.delete_message(chat_id, call.message.message_id)
@@ -36,7 +36,7 @@ def restart_bot(message):
     bot.send_message(message.chat.id, "Также, если вы заметите какие-нибудь баги или увидели, что не хватает какой-то профессии, то пишите в ЛС @KingAMR35. Он все исправит!😃👨‍💻")
     keyboard = types.InlineKeyboardMarkup()
     button1 = types.InlineKeyboardButton(text="Обычный поиск", callback_data="button1")
-    button7777777777 = types.InlineKeyboardButton(text="Углублённый поиск", callback_data="button7777777777")
+    button7777777777 = types.InlineKeyboardButton(text="Углублённый поиск --В разработке--", callback_data="button7777777777")
     keyboard.add(button1)
     keyboard.add(button7777777777)
     bot.send_message(message.chat.id, "Выберите поиск, чтобы начать", reply_markup=keyboard)
@@ -91,9 +91,9 @@ def callback_inline_message(call):
             keyboard.row(button21)
             keyboard.row(button15, button18)
             bot.send_message(call.message.chat.id, "Вот вам еще варианты",reply_markup=keyboard)
-
 #=========================================================================СПОРТ
         if call.data == 'button2':
+            
             keyboard = types.InlineKeyboardMarkup()
             button01 = types.InlineKeyboardButton(text="Менеджер", callback_data="button01")
             button02 = types.InlineKeyboardButton(text="Комментатор", callback_data="button02")
@@ -109,23 +109,12 @@ def callback_inline_message(call):
             keyboard.row(button06)
             keyboard.row(bt1)
             bot.send_message(call.message.chat.id, "Нажмите на профессию, про которую вы хотите узнать больше интересных фактов", reply_markup=keyboard)
-            
         if call.data == 'button01':
             bot.send_message(call.message.chat.id, "Спортивный менеджер -- Специалист по организации спортивных мероприятий и соревнований.")
             bot.send_message(call.message.chat.id, "Зарплата спортивного менеджера в России — 50 000–150 000 рублей, в Москве — 65 000–150 000 рублей.")
             markup = types.InlineKeyboardMarkup()
             markup.add(types.InlineKeyboardButton('Тык', url='https://rutube.ru/video/c9b6f5d5c1c344ef50aa38f8e72e2d8b/'))
             bot.send_message(call.message.chat.id, "Нажми на кнопку, чтобы лучше ознакомиться с данной профессией(видео)", reply_markup=markup)
-            keyboard = types.InlineKeyboardMarkup()
-            but = types.InlineKeyboardButton(text="Удалить", callback_data="but")
-            keyboard.row(but)
-            bot.send_message(call.message.chat.id, "Нажми, чтобы удалить сообщения выше", reply_markup=keyboard)
-            if call.data == 'but':
-                bot.delete_messages(
-                    
-                )
-                
-            
         if call.data == 'button02':
             bot.send_message(call.message.chat.id, "Комментатор -- Журналист, который в режиме реального времени освещает события матча, турнира и любых соревнований.")
             bot.send_message(call.message.chat.id,"Зароботок комментатора зависит от того, насколько качественно он/она комментирует. Например, Дмитрий Бажанов — 70 тысяч рублей, а Александр Неценко — 220 тысяч рублей.")
@@ -164,6 +153,8 @@ def callback_inline_message(call):
             bot.send_message(call.message.chat.id, "Нажми на кнопку, чтобы лучше ознакомиться с данной профессией(видео)", reply_markup=markup)
 #====================================================================ШКОЛА
         if call.data == 'button3':
+            
+
             keyboard = types.InlineKeyboardMarkup()
             button001 = types.InlineKeyboardButton(text="Учитель", callback_data="button001")
             button002 = types.InlineKeyboardButton(text="Заместитель директора", callback_data="button002")
@@ -216,6 +207,8 @@ def callback_inline_message(call):
             bot.send_message(call.message.chat.id, "Нажми на кнопку, чтобы лучше ознакомиться с данной профессией(видео)", reply_markup=markup)
 #===================================================================ПРОГРАММИРОВАНИЕ
         if call.data == 'button4':
+            
+            
             keyboard = types.InlineKeyboardMarkup()
             button0001 = types.InlineKeyboardButton(text="Разработчик программного обеспечения", callback_data="button0001")
             button0002 = types.InlineKeyboardButton(text="Веб-разработчик", callback_data="button0002")
@@ -231,7 +224,6 @@ def callback_inline_message(call):
             keyboard.row(button0006)
             keyboard.row(bt3)
             bot.send_message(call.message.chat.id, "Нажмите на профессию, про которую вы хотите узнать больше интересных фактов",reply_markup=keyboard)
-
         if call.data == 'button0001':
             bot.send_message(call.message.chat.id, "Разработчик программного обеспечения -- Создаёт приложения и системы, которые решают различные задачи. Работает с языками программирования (Python, Java, C++).")
             bot.send_message(call.message.chat.id, "Для начинающих разработчиков без опыта — от 40 000 до 70 000 рублей в месяц. Для разработчиков со средним опытом работы — от 70 000 до 120 000 рублей в месяц. Для опытных разработчиков с более чем 5-летним опытом — от 120 000 до 200 000 рублей и более в месяц.")
@@ -268,7 +260,6 @@ def callback_inline_message(call):
             markup = types.InlineKeyboardMarkup()
             markup.add(types.InlineKeyboardButton('Тык', url='https://yandex.ru/video/preview/6914020291219887218?from=tabbar&parent-reqid=1745946190762568-11633477674474500941-balancer-l7leveler-kubr-yp-sas-91-BAL&text=%D0%BA%D0%B0%D0%BA+%D1%81%D1%82%D0%B0%D1%82%D1%8C+%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9+%D0%B0%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%BE%D1%80+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE+%D0%BD%D0%B5+%D0%B4%D0%BE%D0%BB%D0%B3%D0%BE%D0%B5'))
             bot.send_message(call.message.chat.id, "Нажми на кнопку, чтобы лучше ознакомиться с данной профессией(видео)", reply_markup=markup)
-
 #=========================================================ХУДОЖЕСТВО
         if call.data == 'button5':
             keyboard = types.InlineKeyboardMarkup()
@@ -532,7 +523,6 @@ def callback_inline_message(call):
             keyboard.row(bt8)
             bot.send_message(call.message.chat.id, "Нажмите на профессию, про которую вы хотите узнать больше интересных фактов",reply_markup=keyboard)
 
-
         if call.data == 'button115':
             bot.send_message(call.message.chat.id,"Архитектурный визуализатор -- Создаёт 3D-модели зданий, чтобы сделать проект понятным и привлекательным для заказчиков и инвесторов.")
             bot.send_message(call.message.chat.id, "Зарплата архитектурного визуализатора в апреле 2025 года в России составляет 40 000–162 000 рублей, в Москве — 70 000–200 000 рублей.")
@@ -655,7 +645,7 @@ def callback_inline_message(call):
             markup = types.InlineKeyboardMarkup()
             markup.add(types.InlineKeyboardButton('Тык', url='https://vkvideo.ru/video-204126606_456239532?ref_domain=yastatic.net'))
             bot.send_message(call.message.chat.id, "Нажми на кнопку, чтобы лучше ознакомиться с данной профессией(видео)", reply_markup=markup)
-#==================================================================СРОИТЕЛЬСТВО
+#==================================================================СТРОИТЕЛЬСТВО
         if call.data == 'button12':
             keyboard = types.InlineKeyboardMarkup()
             button130 = types.InlineKeyboardButton(text="Архитектор", callback_data="button130")
@@ -709,6 +699,7 @@ def callback_inline_message(call):
             markup = types.InlineKeyboardMarkup()
             markup.add(types.InlineKeyboardButton('Тык', url='https://rutube.ru/video/f5f77a139c5d2acedcae423b24045849/?r=plemwd'))
             bot.send_message(call.message.chat.id, "Нажми на кнопку, чтобы лучше ознакомиться с данной профессией(видео)", reply_markup=markup)
+#==================================================================Работа с животными
         if call.data == 'button13':
             keyboard = types.InlineKeyboardMarkup()
             button136 = types.InlineKeyboardButton(text="Ветеринар", callback_data="button136")
@@ -725,7 +716,7 @@ def callback_inline_message(call):
             keyboard.row(button141)
             keyboard.row(bt12)
             bot.send_message(call.message.chat.id, "Нажмите на профессию, про которую вы хотите узнать больше интересных фактов",reply_markup=keyboard)
-
+            
         if call.data == 'button136':
             bot.send_message(call.message.chat.id,"Ветеринар -- Занимается лечением и профилактикой заболеваний у животных. Диагностирует болезни, проводит операции, делает прививки и оказывает помощь в экстренных случаях. ")
             bot.send_message(call.message.chat.id, "Ветеринарный врач-практикант — от 25 тыс. до 40 тыс. руб. в месяц. Ветеринарный врач среднего уровня — от 40 тыс. до 100 тыс. руб. в месяц. Ветеринарный врач с опытом работы — от 70 тыс. до 250 тыс. руб. в месяц.")
@@ -1246,7 +1237,6 @@ def callback_inline_message(call):
             markup.add(types.InlineKeyboardButton('Тык', url='https://rutube.ru/video/55fb5023ee8eec07003358a19dc2dce8/?r=plemwd'))
             bot.send_message(call.message.chat.id, "Нажми на кнопку, чтобы лучше ознакомиться с данной профессией(видео)", reply_markup=markup)
 #=======================================================================ФИНАНСЫ
-
         if call.data == 'button18':
             keyboard = types.InlineKeyboardMarkup()
             button196 = types.InlineKeyboardButton(text="Финансовый аналитик", callback_data="button196")
@@ -1330,11 +1320,9 @@ def callback_inline_message(call):
 
 
         if call.data == "button7777777777":
-            bot.send_message(call.message.chat.id, "Начинается углубленный поиск профессий, ожидайте🔄")
-            time.sleep(2)
             keyboard = types.InlineKeyboardMarkup()
             button204 = types.InlineKeyboardButton(text="Математические предметы", callback_data='button204')
-            button205 = types.InlineKeyboardButton(text="Гуманитарные науки, естественно научные", callback_data='button205')
+            button205 = types.InlineKeyboardButton(text="Гуманитарные науки", callback_data='button205')
             button223 = types.InlineKeyboardButton(text="Естественно научные предметы", callback_data='button223')
             keyboard.row(button204)
             keyboard.row(button205)
@@ -1348,6 +1336,7 @@ def callback_inline_message(call):
             button232 = types.InlineKeyboardButton(text="Высшая математика", callback_data='button232')
             button233 = types.InlineKeyboardButton(text="Тригонометрия", callback_data='button233')
             button234 = types.InlineKeyboardButton(text="Стереометрия", callback_data='button234')
+            button250 = types.InlineKeyboardButton(text="Ознакомиться", callback_data='button250')
             bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
             keyboard.row(button206)
             keyboard.row(button207)
@@ -1355,22 +1344,131 @@ def callback_inline_message(call):
             keyboard.row(button232)
             keyboard.row(button233)
             keyboard.row(button234)
+            keyboard.row(button250)
             keyboard.row(bt21)
-            bot.send_message(call.message.chat.id, "Выберите предмет, который вы больше всего знаете", reply_markup=keyboard)
+            bot.send_message(call.message.chat.id, "Выберите предмет, который вы больше всего знаете. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
             
+        if call.data == 'button250':
+            keyboard = types.InlineKeyboardMarkup()
+            button251 = types.InlineKeyboardButton(text="Алгебра", callback_data='button251')
+            button252 = types.InlineKeyboardButton(text="Геометрия", callback_data='button252')
+            button253 = types.InlineKeyboardButton(text="Планиметрия", callback_data='button253')
+            button254 = types.InlineKeyboardButton(text="Высшая математика", callback_data='button254')
+            button255 = types.InlineKeyboardButton(text="Тригонометрия", callback_data='button255')
+            button256 = types.InlineKeyboardButton(text="Стереометрия", callback_data='button256')
+            bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+            keyboard.row(button251)
+            keyboard.row(button252)
+            keyboard.row(button253)
+            keyboard.row(button254)
+            keyboard.row(button255)
+            keyboard.row(button256)
+            keyboard.row(bt21)
+            bot.send_message(call.message.chat.id, "Выберите предмет, с которым вы хотите ознакомиться.", reply_markup=keyboard)
             
+        if call.data == 'button251':
+            bot.send_message(call.message.chat.id, "Алгебра -- это раздел математики, посвящённый изучению операций над элементами множеств произвольной природы, обобщающий обычные операции сложения и умножения чисел.")
+        if call.data == 'button252':
+            bot.send_message(call.message.chat.id, "Геометрия -- это раздел математики, изучающий пространственные структуры и отношения, а также их обобщения. Охватывает разнообразные аспекты: от простых двухмерных форм (треугольники, круги) до трёхмерных объектов (сферы, кубы)")
+        if call.data == 'button253':
+            bot.send_message(call.message.chat.id, "Планиметрия -- это раздел геометрии, изучающий свойства фигур, расположенных на плоскости.")
+        if call.data == 'button254':
+            bot.send_message(call.message.chat.id, "Высшая математика -- это это совокупность разделов математики, которые изучают абстрактные структуры и их свойства, не относящихся к элементарной математике. Также так называют курс обучения в средних и высших учебных заведениях, включающий высшую алгебру и математический анализ.")
+        if call.data == 'button255':
+            bot.send_message(call.message.chat.id, "Тригонометрия -- это раздел математики, изучающий отношения между сторонами и углами треугольников. Основана на тригонометрических функциях, которые описывают отношения между углами и сторонами прямоугольного треугольника.")
+        if call.data == 'button256':
+            bot.send_message(call.message.chat.id, "Стереометрия -- это раздел геометрии, в котором изучаются свойства пространственных фигур, то есть фигур, не принадлежащих одной плоскости.")
+        
+        
         if call.data == 'button206':
-            bot.send_message(call.message.chat.id, "")
-        if call.data == 'button207':
-            bot.send_message(call.message.chat.id, "")
-        if call.data == 'button208':
-            bot.send_message(call.message.chat.id, "")
-        if call.data == 'button232':
-            bot.send_message(call.message.chat.id, "")
-        if call.data == 'button233':
-            bot.send_message(call.message.chat.id, "")
-        if call.data == 'button234':
-            bot.send_message(call.message.chat.id, "")
+            keyboard = types.InlineKeyboardMarkup()
+            button275 = types.InlineKeyboardButton(text="Начальная алгебра", callback_data='button275')
+            button276 = types.InlineKeyboardButton(text="Квадратичные уравнения", callback_data='button276')
+            button277 = types.InlineKeyboardButton(text="Степени и радикалы", callback_data='button277')
+            button278 = types.InlineKeyboardButton(text="Логарифмы и экспоненты", callback_data='button278')
+            button279 = types.InlineKeyboardButton(text="Матрицы и вектора", callback_data='button279')
+            button280 = types.InlineKeyboardButton(text="Комплексные числа ", callback_data='button280')
+            button281 = types.InlineKeyboardButton(text="Теория вероятностей", callback_data='button281')
+            button282 = types.InlineKeyboardButton(text="Дискретная математика", callback_data='button282')
+            button293 = types.InlineKeyboardButton(text="Ознакомиться", callback_data='button293')
+            bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+            keyboard.row(button275)
+            keyboard.row(button276)
+            keyboard.row(button277)
+            keyboard.row(button278)
+            keyboard.row(button279)
+            keyboard.row(button280)
+            keyboard.row(button281)
+            keyboard.row(button282)
+            keyboard.row(button293)
+            keyboard.row(bt21)
+            bot.send_message(call.message.chat.id, "Выберите раздел, который вы больше всего знаете. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
+        if call.data == 'button293':
+            keyboard = types.InlineKeyboardMarkup()
+            button294 = types.InlineKeyboardButton(text="Начальная алгебра", callback_data='button294')
+            button295 = types.InlineKeyboardButton(text="Квадратичные уравнения", callback_data='button295')
+            button296 = types.InlineKeyboardButton(text="Степени и радикалы", callback_data='button296')
+            button297 = types.InlineKeyboardButton(text="Логарифмы и экспоненты", callback_data='button297')
+            button298 = types.InlineKeyboardButton(text="Матрицы и вектора", callback_data='button298')
+            button299 = types.InlineKeyboardButton(text="Комплексные числа", callback_data='button299')
+            button300 = types.InlineKeyboardButton(text="Теория вероятностей", callback_data='button300')
+            button301 = types.InlineKeyboardButton(text="Дискретная математика", callback_data='button301')
+            bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+            keyboard.row(button294)
+            keyboard.row(button295)
+            keyboard.row(button296)
+            keyboard.row(button297)
+            keyboard.row(button298)
+            keyboard.row(button299)
+            keyboard.row(button300)
+            keyboard.row(button301)
+            keyboard.row(bt21)
+            bot.send_message(call.message.chat.id, "Выберите раздел, c которым вы хотите ознакомиться", reply_markup=keyboard)
+            
+            
+        if call.data == 'button294':
+            bot.send_message(call.message.chat.id, "Начальная алгебра -- это решение линейных уравнений, неравенств, графиков, систем уравнений и неравенств.")
+        if call.data == 'button295':
+            bot.send_message(call.message.chat.id, "Квадратичные уравнения -- это алгебраическое уравнение второй степени вида")
+        if call.data == 'button296':
+            bot.send_message(call.message.chat.id, "Степени и радикалы -- это понятия в математике, связанные с разными операциями: многократным умножением числа на само себя и извлечением корня из числа или выражения.")
+        if call.data == 'button297':
+            bot.send_message(call.message.chat.id, "Логарифмы и экспоненты -- это оказатель степени, в которую нужно возвести основание, чтобы получить заданное число. Логарифмы — обратная операция возведения в степень.")
+        if call.data == 'button298':
+            bot.send_message(call.message.chat.id, "Матрицы и вектора -- это упорядоченная таблица чисел, которая представляет собой совокупность строк и столбцов, на пересечении которых находятся её элементы. Матрицы используют для решения уравнений и работы с линейными преобразованиями.")
+        if call.data == 'button299':
+            bot.send_message(call.message.chat.id, "Комплексные числа -- это числа, которые представляют собой комбинацию действительного и мнимого чисел. Они используются в математике для расширения понятия числовых систем, например, для решения задач, которые невозможно было решить в действительных числах.")
+        if call.data == 'button300':
+            bot.send_message(call.message.chat.id, "Теория вероятностей -- это раздел математики, изучающий законы и закономерности случайных явлений и экспериментов. Ее цель — описать неопределённость и предсказать поведение случайных событий с некоторой степенью точности.")
+        if call.data == 'button301':
+            bot.send_message(call.message.chat.id, "Дискретная математика -- это раздел математики, изучающий дискретные структуры — объекты, состоящие из отдельных, чётко различимых элементов, в отличие от непрерывных структур, которые могут принимать любые значения в определённых пределах.")
+            
+        if call.data == 'button275':
+            keyboard = types.InlineKeyboardMarkup()
+            button302 = types.InlineKeyboardButton(text="Экономисты", callback_data='button302')
+            button303 = types.InlineKeyboardButton(text="Бухгалтеры", callback_data='button303')
+            button304 = types.InlineKeyboardButton(text="Специалисты по продажам", callback_data='button304')
+            button305 = types.InlineKeyboardButton(text="Программисты", callback_data='button305')
+            button306 = types.InlineKeyboardButton(text="Проектировщики", callback_data='button306')
+            button307 = types.InlineKeyboardButton(text="Медицинские работники", callback_data='button307')
+            button308 = types.InlineKeyboardButton(text="Учёные", callback_data='button308')
+            button309 = types.InlineKeyboardButton(text="Педагоги", callback_data='button309')
+            button310 = types.InlineKeyboardButton(text="Электрики", callback_data='button310')
+            button311 = types.InlineKeyboardButton(text="Ознакомиться", callback_data='button311')
+            bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+            keyboard.row(button302)
+            keyboard.row(button303)
+            keyboard.row(button304)
+            keyboard.row(button305)
+            keyboard.row(button306)
+            keyboard.row(button307)
+            keyboard.row(button308)
+            keyboard.row(button309)
+            keyboard.row(button310)
+            keyboard.row(button311)
+            keyboard.row(bt21)
+            bot.send_message(call.message.chat.id, "Выберите раздел, который вам больше всего нравится. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
+            # Добавить ознакомиться к этому + доделать алгебра
             
             
         if call.data == 'button205':
@@ -1386,6 +1484,7 @@ def callback_inline_message(call):
             button217= types.InlineKeyboardButton(text="Антропология", callback_data='button217')
             button218= types.InlineKeyboardButton(text="Педагогика", callback_data='button218')
             button219= types.InlineKeyboardButton(text="Ознакомиться", callback_data='button219')
+            bt25 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt25")
             keyboard.row(button209)
             keyboard.row(button210)
             keyboard.row(button211)
@@ -1397,56 +1496,57 @@ def callback_inline_message(call):
             keyboard.row(button217)
             keyboard.row(button218)
             keyboard.row(button219)
+            keyboard.row(bt25)
             bot.send_message(call.message.chat.id, "Выберите предмет, который вам нравится. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
             
     #Ознакомиться======================================================================
 
         if call.data == 'button219':
             keyboard = types.InlineKeyboardMarkup()
-            button209 = types.InlineKeyboardButton(text="История", callback_data='button209')
-            button210 = types.InlineKeyboardButton(text="Философия", callback_data='button210')
-            button211= types.InlineKeyboardButton(text="Литературоведение", callback_data='button211')
-            button212= types.InlineKeyboardButton(text="Языкознание", callback_data='button212')
-            button213= types.InlineKeyboardButton(text="Искусствоведение", callback_data='button213')
-            button214= types.InlineKeyboardButton(text="Психология", callback_data='button214')
-            button215= types.InlineKeyboardButton(text="Социология", callback_data='button215')
-            button216= types.InlineKeyboardButton(text="Этнография ", callback_data='button216')
-            button217= types.InlineKeyboardButton(text="Антропология", callback_data='button217')
-            button218= types.InlineKeyboardButton(text="Педагогика", callback_data='button218')
+            button257 = types.InlineKeyboardButton(text="История", callback_data='button209')
+            button258 = types.InlineKeyboardButton(text="Философия", callback_data='button210')
+            button259= types.InlineKeyboardButton(text="Литературоведение", callback_data='button211')
+            button260= types.InlineKeyboardButton(text="Языкознание", callback_data='button212')
+            button261= types.InlineKeyboardButton(text="Искусствоведение", callback_data='button213')
+            button262= types.InlineKeyboardButton(text="Психология", callback_data='button214')
+            button263= types.InlineKeyboardButton(text="Социология", callback_data='button215')
+            button264= types.InlineKeyboardButton(text="Этнография ", callback_data='button216')
+            button266= types.InlineKeyboardButton(text="Антропология", callback_data='button217')
+            button265= types.InlineKeyboardButton(text="Педагогика", callback_data='button218')
             bt22 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt22")
-            keyboard.row(button209)
-            keyboard.row(button210)
-            keyboard.row(button211)
-            keyboard.row(button212)
-            keyboard.row(button213)
-            keyboard.row(button214)
-            keyboard.row(button215)
-            keyboard.row(button216)
-            keyboard.row(button217)
-            keyboard.row(button218)
+            keyboard.row(button257)
+            keyboard.row(button258)
+            keyboard.row(button259)
+            keyboard.row(button260)
+            keyboard.row(button261)
+            keyboard.row(button262)
+            keyboard.row(button263)
+            keyboard.row(button264)
+            keyboard.row(button265)
+            keyboard.row(button266)
             keyboard.row(bt22)
             bot.send_message(call.message.chat.id, "Нажмите на предмет, с которым вы хотите ознакомиться.", reply_markup=keyboard)
                 
                 
-        if call.data == 'button209':
+        if call.data == 'button257':
             bot.send_message(call.message.chat.id, "История -- история занимается изучением прошлого человечества, его развития, изменения обществ, государств, цивилизаций и отдельных личностей. Она помогает понять современные реалии, выявляя причины возникновения тех или иных процессов и ситуаций.")
-        if call.data == 'button210':
+        if call.data == 'button258':
             bot.send_message(call.message.chat.id, "Философия -- философия ставит перед собой цель исследовать природу бытия, познания, этику, эстетику, политику и другие важнейшие вопросы существования человека. Это наука о мировоззрении, осмыслении мира и поиске смысла жизни.")
-        if call.data == 'button211':
+        if call.data == 'button259':
             bot.send_message(call.message.chat.id, "Литературоведение -- литературоведение изучает литературу, её формы, жанры, художественное содержание и развитие литературных традиций. Оно также включает теорию литературы, критику и историю литературы.")
-        if call.data == 'button212':
+        if call.data == 'button260':
             bot.send_message(call.message.chat.id, "Языкознание -- Наука о языках и речи, изучении структуры, функционирования и исторического развития языков. Включает фонетику, грамматику, лексикологию, стилистику и семантику.")
-        if call.data == 'button213':
+        if call.data == 'button261':
             bot.send_message(call.message.chat.id, "Искусствоведение -- Искусствоведение направлено на изучение искусства, его форм, стилей, видов и особенностей восприятия. Эта область занимается живописью, скульптурой, архитектурой, музыкой, театром и кино.")
-        if call.data == 'button214':
+        if call.data == 'button262':
             bot.send_message(call.message.chat.id, "Психология -- психология изучает поведение, мышление, эмоции и сознание человека. Выделяются клиническая психология, социальная психология, детская психология, педагогическая психология и многие другие специализированные направления.")
-        if call.data == 'button215':
+        if call.data == 'button263':
             bot.send_message(call.message.chat.id, "Социология -- изучение общества, социальной структуры, социального поведения и взаимоотношений индивидов внутри коллективов. Объектами изучения являются социальные институты, группы, классы, культура и общество в целом.")
-        if call.data == 'button216':
+        if call.data == 'button264':
             bot.send_message(call.message.chat.id, "Этнография -- этнография занимается описанием, сравнительным изучением народов, их обычаев, верований, быта и материальной культуры. Её задачей является выявление сходства и различий среди этнических групп.")
-        if call.data == 'button217':
+        if call.data == 'button265':
             bot.send_message(call.message.chat.id, "Антропология -- антропология рассматривает человеческую сущность, происхождение, физическое строение, развитие и разнообразие культур. Она объединяет биологический и социальный подходы к изучению человека.")
-        if call.data == 'button218':
+        if call.data == 'button266':
             bot.send_message(call.message.chat.id, "Педагогика -- Педагогика изучает процесс воспитания и обучения, методики преподавания, организацию образовательного процесса и формирование личности ребенка и взрослого.")
         
         
@@ -1466,6 +1566,7 @@ def callback_inline_message(call):
             button230 = types.InlineKeyboardButton(text="Естествознание ", callback_data='button230')
             button231 = types.InlineKeyboardButton(text="Основы безопасности и защиты Родины ", callback_data='button231')
             button232= types.InlineKeyboardButton(text="Ознакомиться", callback_data='button232')
+            bt23 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt23")
             keyboard.row(button224)
             keyboard.row(button225)
             keyboard.row(button226)
@@ -1475,44 +1576,47 @@ def callback_inline_message(call):
             keyboard.row(button230)
             keyboard.row(button231)
             keyboard.row(button232)
+            keyboard.row(bt23)
             bot.send_message(call.message.chat.id, "Выберите предмет, который вам нравится. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
            
            
         if call.data == 'button232':
             keyboard = types.InlineKeyboardMarkup()
-            button224 = types.InlineKeyboardButton(text="Природоведение ", callback_data='button224')
-            button225 = types.InlineKeyboardButton(text="Биология", callback_data='button225')
-            button226 = types.InlineKeyboardButton(text="Химия", callback_data='button226')
-            button227 = types.InlineKeyboardButton(text="Физика", callback_data='button227')
-            button228 = types.InlineKeyboardButton(text="Астрономия", callback_data='button228')
-            button229 = types.InlineKeyboardButton(text="Экология", callback_data='button229')
-            button230 = types.InlineKeyboardButton(text="Естествознание ", callback_data='button230')
-            button231 = types.InlineKeyboardButton(text="Основы безопасности и защиты Родины", callback_data='button231')
-            keyboard.row(button224)
-            keyboard.row(button225)
-            keyboard.row(button226)
-            keyboard.row(button227)
-            keyboard.row(button228)
-            keyboard.row(button229)
-            keyboard.row(button230)
-            keyboard.row(button231)
+            button267 = types.InlineKeyboardButton(text="Природоведение ", callback_data='button224')
+            button268 = types.InlineKeyboardButton(text="Биология", callback_data='button225')
+            button269 = types.InlineKeyboardButton(text="Химия", callback_data='button226')
+            button270 = types.InlineKeyboardButton(text="Физика", callback_data='button227')
+            button271 = types.InlineKeyboardButton(text="Астрономия", callback_data='button228')
+            button272 = types.InlineKeyboardButton(text="Экология", callback_data='button229')
+            button273 = types.InlineKeyboardButton(text="Естествознание ", callback_data='button230')
+            button274 = types.InlineKeyboardButton(text="Основы безопасности и защиты Родины", callback_data='button231')
+            bt24 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt24")
+            keyboard.row(button267)
+            keyboard.row(button268)
+            keyboard.row(button269)
+            keyboard.row(button270)
+            keyboard.row(button271)
+            keyboard.row(button272)
+            keyboard.row(button273)
+            keyboard.row(button274)
+            keyboard.row(bt24)
             bot.send_message(call.message.chat.id, "Нажмите на предмет, с которым вы хотите ознакомиться.", reply_markup=keyboard)
             
-        if call.data == 'button224':
+        if call.data == 'button267':
             bot.send_message(call.message.chat.id, "Природоведение --  совокупность знаний о природе, или естествознание как предмет преподавания.")
-        if call.data == 'button225':
+        if call.data == 'button268':
             bot.send_message(call.message.chat.id, "Биология -- наука о живых существах и природе, строении живых организмов и их взаимодействии с окружающей средой. Относится к естественным наукам.")
-        if call.data == 'button226':
+        if call.data == 'button269':
             bot.send_message(call.message.chat.id, "Химия -- это наука о веществах, их строении, свойствах и взаимных превращениях. Также химией называют качественный состав чего-либо, например «химия нефти», «химия крови».")
-        if call.data == 'button227':
+        if call.data == 'button270':
             bot.send_message(call.message.chat.id, "Физика -- это фундаментальная естественная наука, изучающая общие законы природы, материи и её движения.")
-        if call.data == 'button228':
+        if call.data == 'button271':
             bot.send_message(call.message.chat.id, "Астрономия -- наука о движении, строении, возникновении и развитии небесных тел, их систем, а также Вселенной в целом. Название произошло от слияния двух слов: ἄστρον — «звезда» и νόμος — «закон».")
-        if call.data == 'button229':
+        if call.data == 'button272':
             bot.send_message(call.message.chat.id, "Экология -- наука о взаимоотношениях живых организмов и окружающей среды, об обмене веществ и потоках энергии, которые делают возможной жизнь на Земле, и о приспособлениях организмов к изменяющимся условиям существования.")
-        if call.data == 'button230':
+        if call.data == 'button273':
             bot.send_message(call.message.chat.id, "Естествознание -- это система наук о законах, явлениях и свойствах объектов природы. Включает множество отраслей — естественных наук")
-        if call.data == 'button231':
+        if call.data == 'button274':
             bot.send_message(call.message.chat.id, "Основы безопасности и защиты Родины -- дисциплина, изучаемая школьниками и студентами образовательных учреждений России, направленная на формирование базовых знаний и практических навыков в области личной и общественной безопасности, а также основ военной подготовки.")
         
             
