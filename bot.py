@@ -1545,6 +1545,57 @@ def callback_inline_message(call):
             keyboard.row(bt21)
             bot.send_message(call.message.chat.id, "Выберите раздел, который вам больше всего нравится. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
             
+        if call.data == 'button306':
+            keyboard = types.InlineKeyboardMarkup()
+            button390 = types.InlineKeyboardButton(text=" ", callback_data='button390')
+            button391 = types.InlineKeyboardButton(text=" ", callback_data='button391')
+            button392 = types.InlineKeyboardButton(text=" ", callback_data='button392')
+            button393 = types.InlineKeyboardButton(text=" ", callback_data='button393')
+            button394 = types.InlineKeyboardButton(text=" ", callback_data='button394')
+            button395 = types.InlineKeyboardButton(text=" ", callback_data='button395')
+            button396 = types.InlineKeyboardButton(text="Ознакомиться🔎", callback_data='button396')
+            bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+            keyboard.row(button390)
+            keyboard.row(button391)
+            keyboard.row(button392)
+            keyboard.row(button393)
+            keyboard.row(button394)
+            keyboard.row(button395)
+            keyboard.row(button396)
+            keyboard.row(bt21)
+            bot.send_message(call.message.chat.id, "Выберите раздел, который вам больше всего нравится. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
+            
+        if call.data == 'button396':
+            keyboard = types.InlineKeyboardMarkup()
+            button397 = types.InlineKeyboardButton(text="", callback_data='button397')
+            button398 = types.InlineKeyboardButton(text="", callback_data='button398')
+            button399 = types.InlineKeyboardButton(text=" ", callback_data='button399')
+            button400 = types.InlineKeyboardButton(text=" ", callback_data='button400')
+            button401 = types.InlineKeyboardButton(text=" ", callback_data='button401')
+            button402 = types.InlineKeyboardButton(text=" ", callback_data='button402')
+            bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+            keyboard.row(button397)
+            keyboard.row(button398)
+            keyboard.row(button399)
+            keyboard.row(button400)
+            keyboard.row(button401)
+            keyboard.row(button402)
+            keyboard.row(bt21)
+            bot.send_message(call.message.chat.id, "Выберите раздел, с которым хотите ознакомиться", reply_markup=keyboard)
+            
+        if call.data == 'button397':
+            bot.send_message(call.message.chat.id, "")
+        if call.data == 'button398':
+            bot.send_message(call.message.chat.id, "")
+        if call.data == 'button399':
+            bot.send_message(call.message.chat.id, "")
+        if call.data == 'button400':
+            bot.send_message(call.message.chat.id, "")
+        if call.data == 'button401':
+            bot.send_message(call.message.chat.id, "")
+        if call.data == 'button402':
+            bot.send_message(call.message.chat.id, "")
+                        
         if call.data == 'button363':
             keyboard = types.InlineKeyboardMarkup()
             button364 = types.InlineKeyboardButton(text="Веб-разработчик", callback_data='button364')
