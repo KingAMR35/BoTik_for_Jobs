@@ -2119,7 +2119,7 @@ UX/UI-дизайн. Специалисты изучают поведение п�
             bot.send_message(call.message.chat.id, "Выберите раздел, который вам больше всего нравится. Если вы не понимаете значение какого-то предмета, то нажмите на --Ознакомиться--.", reply_markup=keyboard)
             
             
-        if call.data == 'button206':
+        if call.data == 'button430':
             keyboard = types.InlineKeyboardMarkup()
             button446 = types.InlineKeyboardButton(text="Инженер-строитель", callback_data='button446')
             button447 = types.InlineKeyboardButton(text="Инженер-механик", callback_data='button447')
@@ -2179,6 +2179,60 @@ UX/UI-дизайн. Специалисты изучают поведение п�
         if call.data == 'button453':
             bot.send_message(call.message.chat.id, "Инженер-технолог -- это специалист, который разрабатывает, внедряет и оптимизирует производственные процессы. Он создаёт технологические инструкции, подбирает оборудование и материалы, контролирует соблюдение стандартов качества и безопасности на производстве.")
             bot.send_message(call.message.chat.id, '''Средняя зарплата инженера-технолога в России —  95 485 рублей
+''')
+        
+        #Физики
+        if call.data == 'button431':
+            keyboard = types.InlineKeyboardMarkup()
+            button454 = types.InlineKeyboardButton(text="", callback_data='button454')
+            button455 = types.InlineKeyboardButton(text="", callback_data='button455')
+            button456 = types.InlineKeyboardButton(text="", callback_data='button456')
+            button457 = types.InlineKeyboardButton(text="", callback_data='button457')
+            button458 = types.InlineKeyboardButton(text="", callback_data='button458')
+            button459 = types.InlineKeyboardButton(text="", callback_data='button459')
+            button460 = types.InlineKeyboardButton(text="", callback_data='button460')
+            button461 = types.InlineKeyboardButton(text="", callback_data='button461')
+            keyboard.row(button454)
+            keyboard.row(button455)
+            keyboard.row(button456)
+            keyboard.row(button457)
+            keyboard.row(button458)
+            keyboard.row(button459)
+            keyboard.row(button460)
+            keyboard.row(button461)
+            bot.send_message(call.message.chat.id, "Выберите профессию, которая вам больше всего нравится", reply_markup=keyboard)
+
+        if call.data == 'button454':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button455':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button456':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button457':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button458':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button459':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button460':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+         if call.data == 'button461':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
 ''')
         
             
