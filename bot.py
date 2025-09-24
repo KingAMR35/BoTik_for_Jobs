@@ -2235,7 +2235,221 @@ UX/UI-дизайн. Специалисты изучают поведение п�
             bot.send_message(call.message.chat.id, '''
 ''')
         
-            
+        #Архитекторы
+        if call.data == 'button432':
+            keyboard = types.InlineKeyboardMarkup()
+            button462 = types.InlineKeyboardButton(text="", callback_data='button462')
+            button463 = types.InlineKeyboardButton(text="", callback_data= 'button463')
+            button464 = types.InlineKeyboardButton(text="", callback_data='button464')
+            button465 = types.InlineKeyboardButton(text= "", callback_data='butto465')
+            button466 = types.InlineKeyboardButton(text="", callback_data='button466')
+            button467 = types.InlineKeyboardButton(text="", callback_data='button467')
+            button468 = types.InlineKeyboardButton(text="", callback_data='button468')
+            button469 = types.InlineKeyboardButton(text="", callback_data='button469')
+            keyboard.row(button462)
+            keyboard.row(button463)
+            keyboard.row(button464)
+            keyboard.row(button465)
+            keyboard.row(button466)
+            keyboard.row(button467)
+            keyboard.row(button468)
+            keyboard.row(button469)
+            bot.send_message(call.message.chat.id, "Выберите профессию, которая вам больше всего нравится", reply_markup=keyboard)
+
+        if call.data == 'button462':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button463':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button464':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button465':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button466':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button467':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button468':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button469':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+    
+        #Разработчики ПО
+        if call.data == 'button433':
+            keyboard = types.InlineKeyboardMarkup()
+            button470 = types.InlineKeyboardButton(text="", callback_data='button470')
+            button471 = types.InlineKeyboardButton(text="", callback_data='button471')
+            button472 = types.InlineKeyboardButton(text="", callback_data='button472')
+            button473 = types.InlineKeyboardButton(text="", callback_data='button473')
+            button474 = types.InlineKeyboardButton(text="", callback_data='button474')
+            button475 = types.InlineKeyboardButton(text="", callback_data='button475')
+            button476 = types.InlineKeyboardButton(text="", callback_data='button476')
+            button477 = types.InlineKeyboardButton(text="", callback_data='button477')
+            keyboard.row(button470)
+            keyboard.row(button471)
+            keyboard.row(button472)
+            keyboard.row(button473)
+            keyboard.row(button474)
+            keyboard.row(button475)
+            keyboard.row(button476)
+            keyboard.row(button477)
+            bot.send_message(call.message.chat.id, "Выберите профессию, которая вам больше всего нравится", reply_markup=keyboard)
+
+        if call.data == 'button470':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button471':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button472':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button473':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button474':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button475':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button476':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button477':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        
+        #Экология
+        if call.data == 'button434':
+            keyboard = types.InlineKeyboardMarkup()
+            button478 = types.InlineKeyboardButton(text="", callback_data='button478')
+            button479 = types.InlineKeyboardButton(text="", callback_data='button479')
+            button480 = types.InlineKeyboardButton(text="", callback_data='button480')
+            button481 = types.InlineKeyboardButton(text="", callback_data='button481')
+            button482 = types.InlineKeyboardButton(text="", callback_data='butto482')
+            button483 = types.InlineKeyboardButton(text="", callback_data='button483')
+            button484 = types.InlineKeyboardButton(text="", callback_data='button484')
+            button485 = types.InlineKeyboardButton(text="", callback_data='button485')
+            keyboard.row(button478)
+            keyboard.row(button479)
+            keyboard.row(button480)
+            keyboard.row(button481)
+            keyboard.row(button482)
+            keyboard.row(button483)
+            keyboard.row(button484)
+            keyboard.row(button485)
+            bot.send_message(call.message.chat.id, "Выберите профессию, которая вам больше всего нравится", reply_markup=keyboard)
+
+        if call.data == 'button478':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button479':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button480':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button481':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button482':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button483':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button484':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button485':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        #Преподаватели
+        if call.data == 'button435':
+            keyboard = types.InlineKeyboardMarkup()
+            button486 = types.InlineKeyboardButton(text="", callback_data='button486')
+            button487 = types.InlineKeyboardButton(text="", callback_data='button487')
+            button488 = types.InlineKeyboardButton(text="", callback_data='button488')
+            button489 = types.InlineKeyboardButton(text="", callback_data='button489')
+            button490 = types.InlineKeyboardButton(text="", callback_data='button490')
+            button491 = types.InlineKeyboardButton(text="", callback_data='button491')
+            button492 = types.InlineKeyboardButton(text="", callback_data='button492')
+            button493 = types.InlineKeyboardButton(text="", callback_data='button493')
+            keyboard.row(button486)
+            keyboard.row(button487)
+            keyboard.row(button488)
+            keyboard.row(button489)
+            keyboard.row(button490)
+            keyboard.row(button491)
+            keyboard.row(button492)
+            keyboard.row(button493)
+            bot.send_message(call.message.chat.id, "Выберите профессию, которая вам больше всего нравится", reply_markup=keyboard)
+
+        if call.data == 'button486':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button487':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button488':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button489':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button490':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button491':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button492':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        if call.data == 'button493':
+            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, '''
+''')
+        
         if call.data == 'button439':
             keyboard = types.InlineKeyboardMarkup()
             button440 = types.InlineKeyboardButton(text="Инженеры", callback_data='button440')
