@@ -2308,14 +2308,14 @@ UX/UI-дизайн. Специалисты изучают поведение п�
         #Разработчики ПО
         if call.data == 'button433':
             keyboard = types.InlineKeyboardMarkup()
-            button470 = types.InlineKeyboardButton(text="", callback_data='button470')
-            button471 = types.InlineKeyboardButton(text="", callback_data='button471')
-            button472 = types.InlineKeyboardButton(text="", callback_data='button472')
-            button473 = types.InlineKeyboardButton(text="", callback_data='button473')
-            button474 = types.InlineKeyboardButton(text="", callback_data='button474')
-            button475 = types.InlineKeyboardButton(text="", callback_data='button475')
-            button476 = types.InlineKeyboardButton(text="", callback_data='button476')
-            button477 = types.InlineKeyboardButton(text="", callback_data='button477')
+            button470 = types.InlineKeyboardButton(text="Frontend-разработчик", callback_data='button470')
+            button471 = types.InlineKeyboardButton(text="Backend-разработчик", callback_data='button471')
+            button472 = types.InlineKeyboardButton(text="Fullstack-разработчик", callback_data='button472')
+            button473 = types.InlineKeyboardButton(text="Mobile-разработчик", callback_data='button473')
+            button474 = types.InlineKeyboardButton(text="DevOps-инженер", callback_data='button474')
+            button475 = types.InlineKeyboardButton(text="Data Scientist", callback_data='button475')
+            button476 = types.InlineKeyboardButton(text="Game Developer", callback_data='button476')
+            button477 = types.InlineKeyboardButton(text="Тестировщик ПО", callback_data='button477')
             keyboard.row(button470)
             keyboard.row(button471)
             keyboard.row(button472)
@@ -2327,35 +2327,40 @@ UX/UI-дизайн. Специалисты изучают поведение п�
             bot.send_message(call.message.chat.id, "Выберите профессию, которая вам больше всего нравится", reply_markup=keyboard)
 
         if call.data == 'button470':
-            bot.send_message(call.message.chat.id, "")
-            bot.send_message(call.message.chat.id, '''
-''')
+            bot.send_message(call.message.chat.id, "Frontend-разработчик -- это IT-специалист, отвечающий за клиентскую часть веб-сайтов и приложений, то есть за то, что видит пользователь и с чем он непосредственно взаимодействует.")
+            bot.send_message(call.message.chat.id, '''Средние зарплаты по грейдам:
+Junior: 50 000 – 100 000 рублей
+Middle: 150 000 – 210 000 рублей
+Senior: 250 000 – 350 000+ рублей''')
         if call.data == 'button471':
-            bot.send_message(call.message.chat.id, "")
-            bot.send_message(call.message.chat.id, '''
-''')
+            bot.send_message(call.message.chat.id, "Backend-разработчик -- это IT-специалист, который отвечает за создание и поддержку невидимой для пользователя серверной части веб-сайтов и приложений.")
+            bot.send_message(call.message.chat.id, '''Средние зарплаты по грейдам
+Стажер: Около 52 000 - 54 000 рублей.
+Junior: От 88 000 рублей.
+Middle: Примерно 200 000 - 201 000 рублей.
+Senior: От 342 000 рублей и выше.''')
         if call.data == 'button472':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Fullstack-разработчик -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button473':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Mobile-разработчик -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button474':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "DevOps-инженер -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button475':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Data Scientist -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button476':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Game Developer -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button477':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Тестировщик ПО -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         
