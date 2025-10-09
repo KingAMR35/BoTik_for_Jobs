@@ -2375,14 +2375,14 @@ Senior (опытный): от 150 тыс. до 250 тыс. рублей и вы�
         #Экология
         if call.data == 'button434':
             keyboard = types.InlineKeyboardMarkup()
-            button478 = types.InlineKeyboardButton(text="", callback_data='button478')
-            button479 = types.InlineKeyboardButton(text="", callback_data='button479')
-            button480 = types.InlineKeyboardButton(text="", callback_data='button480')
-            button481 = types.InlineKeyboardButton(text="", callback_data='button481')
-            button482 = types.InlineKeyboardButton(text="", callback_data='butto482')
-            button483 = types.InlineKeyboardButton(text="", callback_data='button483')
-            button484 = types.InlineKeyboardButton(text="", callback_data='button484')
-            button485 = types.InlineKeyboardButton(text="", callback_data='button485')
+            button478 = types.InlineKeyboardButton(text="Эколог", callback_data='button478')
+            button479 = types.InlineKeyboardButton(text="Биолог", callback_data='button479')
+            button480 = types.InlineKeyboardButton(text="Гидролог", callback_data='button480')
+            button481 = types.InlineKeyboardButton(text="Климатолог", callback_data='button481')
+            button482 = types.InlineKeyboardButton(text="Почвовед", callback_data='butto482')
+            button483 = types.InlineKeyboardButton(text="Агроэколог", callback_data='button483')
+            button484 = types.InlineKeyboardButton(text="Географ", callback_data='button484')
+            button485 = types.InlineKeyboardButton(text="Зелёный инженер", callback_data='button485')
             keyboard.row(button478)
             keyboard.row(button479)
             keyboard.row(button480)
@@ -2394,35 +2394,38 @@ Senior (опытный): от 150 тыс. до 250 тыс. рублей и вы�
             bot.send_message(call.message.chat.id, "Выберите профессию, которая вам больше всего нравится", reply_markup=keyboard)
 
         if call.data == 'button478':
-            bot.send_message(call.message.chat.id, "")
-            bot.send_message(call.message.chat.id, '''
+            bot.send_message(call.message.chat.id, "Эколог -- это специалист, изучающий взаимоотношения живых организмов друг с другом и с окружающей средой, анализирующий и оценивающий воздействие человека на природу, а также разрабатывающий мероприятия по ее защите и охране.")
+            bot.send_message(call.message.chat.id, '''Средняя зарплата эколога в России составляет около 60–70 тысяч рублей в месяц, но диапазон может варьироваться от 40 тысяч рублей для начинающих специалистов до более 120 тысяч для ведущих или главных экологов.
 ''')
         if call.data == 'button479':
-            bot.send_message(call.message.chat.id, "")
-            bot.send_message(call.message.chat.id, '''
-''')
+            bot.send_message(call.message.chat.id, "Биолог -- это специалист, который изучает живые организмы, их строение, функции, развитие, происхождение и взаимодействие с окружающей средой, от микроорганизмов до человека.")
+            bot.send_message(call.message.chat.id, '''Примеры зарплат в зависимости от опыта и сектора:
+Начинающий специалист (0-2 года опыта): от 30 000 до 70 000 рублей в месяц. 
+Специалист (3-5 лет опыта): от 70 000 до 120 000 рублей. 
+Опытный специалист (6-10 лет опыта): от 120 000 до 180 000 рублей. 
+Эксперт (10+ лет опыта): от 180 000 рублей и выше.''')
         if call.data == 'button480':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Гидролог -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button481':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Климатолог -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button482':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Почвовед -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button483':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Агроэколог -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button484':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Географ -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button485':
-            bot.send_message(call.message.chat.id, "")
+            bot.send_message(call.message.chat.id, "Зелёный инженер -- это ")
             bot.send_message(call.message.chat.id, '''
 ''')
         #Преподаватели
