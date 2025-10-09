@@ -2340,29 +2340,37 @@ Junior: От 88 000 рублей.
 Middle: Примерно 200 000 - 201 000 рублей.
 Senior: От 342 000 рублей и выше.''')
         if call.data == 'button472':
-            bot.send_message(call.message.chat.id, "Fullstack-разработчик -- это ")
+            bot.send_message(call.message.chat.id, "Fullstack-разработчик -- это IT-специалист, который обладает знаниями и навыками как во фронтенд-, так и в бэкенд-разработке, что позволяет ему заниматься полным циклом создания веб-приложений или сайтов — от пользовательского интерфейса до серверной логики и баз данных.")
             bot.send_message(call.message.chat.id, '''
 ''')
         if call.data == 'button473':
             bot.send_message(call.message.chat.id, "Mobile-разработчик -- это ")
-            bot.send_message(call.message.chat.id, '''
+            bot.send_message(call.message.chat.id, '''В России среднемесячная зарплата фулстек-разработчика в 2025 году составляет от 150 000 до 250 000 рублей, но может значительно варьироваться в зависимости от опыта (Junior, Middle, Senior)
 ''')
         if call.data == 'button474':
-            bot.send_message(call.message.chat.id, "DevOps-инженер -- это ")
-            bot.send_message(call.message.chat.id, '''
-''')
+            bot.send_message(call.message.chat.id, "DevOps-инженер -- это IT-специалист, который автоматизирует процессы разработки и эксплуатации программного обеспечения, выступая связующим звеном между разработкой (Dev) и операционной поддержкой (Ops).")
+            bot.send_message(call.message.chat.id, '''Опыт и квалификация:
+Junior DevOps: от 75 000 до 130 500 рублей (средняя по Москве). 
+Middle DevOps: от 150 000 до 280 000 рублей. 
+Senior DevOps: от 280 000 рублей и выше, может достигать 450 000–600 000 рублей и более. ''')
         if call.data == 'button475':
-            bot.send_message(call.message.chat.id, "Data Scientist -- это ")
-            bot.send_message(call.message.chat.id, '''
-''')
+            bot.send_message(call.message.chat.id, "Data Scientist -- это специалист, который использует статистику, программирование и машинное обучение для извлечения ценной информации из больших данных с целью решения бизнес-задач, создания прогностических моделей и поддержки принятия обоснованных решений.")
+            bot.send_message(call.message.chat.id, '''Зарплата по уровню специалиста (в рублях в месяц)
+Junior: 100 000 – 120 000
+Middle: 200 000 – 280 000
+Senior: от 300 000 до 700 000.''')
         if call.data == 'button476':
-            bot.send_message(call.message.chat.id, "Game Developer -- это ")
-            bot.send_message(call.message.chat.id, '''
-''')
+            bot.send_message(call.message.chat.id, "Game Developer -- это разработчик программного обеспечения, специализирующийся на разработке видеоигр — процессе и связанных с ним дисциплинах создания видеоигр.")
+            bot.send_message(call.message.chat.id, '''Примеры зарплат в России (по данным на 2025 год):
+Junior (начальный уровень): от 50 000 до 90 000 рублей в месяц. 
+Middle (средний уровень): от 100 000 до 225 000 рублей в месяц. 
+Senior (опытный специалист): до 480 000 рублей в месяц и более, в зависимости от проекта и опыта.''')
         if call.data == 'button477':
-            bot.send_message(call.message.chat.id, "Тестировщик ПО -- это ")
-            bot.send_message(call.message.chat.id, '''
-''')
+            bot.send_message(call.message.chat.id, "Тестировщик ПО -- это специалист, который проверяет качество IT-продуктов (сайтов, приложений, сервисов) на наличие ошибок, сбоев и несоответствий требованиям перед их выпуском к пользователям. ")
+            bot.send_message(call.message.chat.id, '''Уровень дохода по опыту:
+Junior (начинающий): от 50-80 тыс. рублей в месяц, по некоторым данным, может быть от 40-50 тыс. рублей в регионах. 
+Middle (средний уровень): от 80-150 тыс. рублей в месяц, с медианой зарплаты около 100-120 тыс. рублей в регионах. 
+Senior (опытный): от 150 тыс. до 250 тыс. рублей и выше, с возможностью достигать 380 тыс. рублей в Москве.''')
         
         #Экология
         if call.data == 'button434':
