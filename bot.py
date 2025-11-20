@@ -18,7 +18,7 @@ bot.set_my_commands(
         telebot.types.BotCommand("help", "📖 Полное описание всех команд"),
         telebot.types.BotCommand("info", "📝 Информация о боте"),
     ])
-image_counter = 0 
+image_counter = 0
 last_used = {}
 last_keyboard = None
 
@@ -30,7 +30,7 @@ def back_to_start(call):
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
             text="Вернулись к началу",
-            reply_markup=start()
+            reply_markup=start(call.message)
         )
 
 @bot.callback_query_handler(func=lambda call: call.data in ['bt1'] )
@@ -126,17 +126,14 @@ def job_search_bot(message):
 
 @bot.message_handler(commands=["job_deepsearch"])
 def start(message):
-    global last_keyboard
+
     keyboard = types.InlineKeyboardMarkup(row_width=2)
-    button204 = types.InlineKeyboardButton(text="📚 Математика и точные науки", callback_data='button204')
+    button204 = types.InlineKeyboardButton(text="📚 Математические предметы", callback_data='button204')
     button205 = types.InlineKeyboardButton(text="🎨 Гуманитарные науки", callback_data='button205')
     button206 = types.InlineKeyboardButton(text="🧪 Естественно-научные дисциплины", callback_data='button206')
-    bt21 = types.InlineKeyboardButton(text="🔙 Вернуться в начало", callback_data="bt21")
     keyboard.row(button204)
     keyboard.row(button205)
     keyboard.row(button206)
-    keyboard.row(bt21)
-    last_keyboard = keyboard
     bot.send_message(message.chat.id, "💡 Давайте найдем профессию вашей мечты!\n\n" \
            "Какой раздел больше всего увлекал вас в школе?\n", reply_markup=keyboard)
     return keyboard
@@ -302,7 +299,7 @@ def start6():
 
 def start7():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button337 = types.InlineKeyboardButton(text="Менеджер по продажам", callback_data='button337')
     button338 = types.InlineKeyboardButton(text="Торговый представитель", callback_data='button338')
     button339 = types.InlineKeyboardButton(text="Менеджер по работе с клиентами", callback_data='button339')
@@ -328,7 +325,7 @@ def start7():
 
 def start8():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button357 = types.InlineKeyboardButton(text="Веб-разработчик", callback_data='button357')
     button358 = types.InlineKeyboardButton(text="Мобильный разработчик", callback_data='button358')
     button359 = types.InlineKeyboardButton(text="Системный администратор", callback_data='button359')
@@ -348,7 +345,7 @@ def start8():
 
 def start9():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button397 = types.InlineKeyboardButton(text="Врач", callback_data='button397')
     button398 = types.InlineKeyboardButton(text="Медсестра", callback_data='button398')
     button399 = types.InlineKeyboardButton(text="Фармацевт", callback_data='button399')
@@ -372,7 +369,7 @@ def start9():
 
 def start10():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button406 = types.InlineKeyboardButton(text="Физик", callback_data='button406')
     button407 = types.InlineKeyboardButton(text="Химик", callback_data='button407')
     button408 = types.InlineKeyboardButton(text="Биолог", callback_data='button408')
@@ -396,7 +393,7 @@ def start10():
 
 def start11():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button414 = types.InlineKeyboardButton(text="Учитель", callback_data='button414')
     button415 = types.InlineKeyboardButton(text="Воспитатель", callback_data='button415')
     button416 = types.InlineKeyboardButton(text="Преподаватель вуза", callback_data='button416')
@@ -420,7 +417,7 @@ def start11():
 
 def start12():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button422 = types.InlineKeyboardButton(text="Электрик", callback_data='button422')
     button423 = types.InlineKeyboardButton(text="Электромонтажник", callback_data='button423')
     button424 = types.InlineKeyboardButton(text="Электрослесарь", callback_data='button424')
@@ -444,7 +441,7 @@ def start12():
 
 def start13():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button321 = types.InlineKeyboardButton(text="Экономист-аналитик", callback_data='button321')
     button322 = types.InlineKeyboardButton(text="Инвест-аналитик", callback_data='button322')
     button323 = types.InlineKeyboardButton(text="Маркетолог", callback_data='button323')
@@ -468,7 +465,7 @@ def start13():
 
 def start14():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button329 = types.InlineKeyboardButton(text="Аудитор", callback_data='button329')
     button330 = types.InlineKeyboardButton(text="Финансовый аналитик", callback_data='button330')
     button331 = types.InlineKeyboardButton(text="Налоговый консультант", callback_data='button331')
@@ -492,7 +489,7 @@ def start14():
 
 def start15():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button312 = types.InlineKeyboardButton(text="Экономисты", callback_data='button312')
     button313 = types.InlineKeyboardButton(text="Бухгалтеры", callback_data='button313')
     button314 = types.InlineKeyboardButton(text="Специалисты по продажам", callback_data='button314')
@@ -518,7 +515,7 @@ def start15():
 
 def start16():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button430 = types.InlineKeyboardButton(text="Инженеры", callback_data='button430')
     button431 = types.InlineKeyboardButton(text="Физики", callback_data='button431')
     button432 = types.InlineKeyboardButton(text="Архитекторы", callback_data='button432')
@@ -540,7 +537,7 @@ def start16():
 
 def start17():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button446 = types.InlineKeyboardButton(text="Инженер-строитель", callback_data='button446')
     button447 = types.InlineKeyboardButton(text="Инженер-механик", callback_data='button447')
     button448 = types.InlineKeyboardButton(text="Аэрокосмический инженер", callback_data='button448')
@@ -564,7 +561,7 @@ def start17():
 
 def start18():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button454 = types.InlineKeyboardButton(text="Физик-экспериментатор", callback_data='button454')
     button455 = types.InlineKeyboardButton(text="Инженер-физик", callback_data='button455')
     button456 = types.InlineKeyboardButton(text="Астроном", callback_data='button456')
@@ -586,7 +583,7 @@ def start18():
 
 def start19():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button462 = types.InlineKeyboardButton(text="Дизайнер интерьера", callback_data='button462')
     button463 = types.InlineKeyboardButton(text="Проектировщик фасадов", callback_data= 'button463')
     button464 = types.InlineKeyboardButton(text="Ландшафтный архитектор", callback_data='button464')
@@ -608,7 +605,7 @@ def start19():
 
 def start20():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button470 = types.InlineKeyboardButton(text="Frontend-разработчик", callback_data='button470')
     button471 = types.InlineKeyboardButton(text="Backend-разработчик", callback_data='button471')
     button472 = types.InlineKeyboardButton(text="Fullstack-разработчик", callback_data='button472')
@@ -630,7 +627,7 @@ def start20():
 
 def start21():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button478 = types.InlineKeyboardButton(text="Эколог", callback_data='button478')
     button479 = types.InlineKeyboardButton(text="Биолог", callback_data='button479')
     button480 = types.InlineKeyboardButton(text="Гидролог", callback_data='button480')
@@ -652,7 +649,7 @@ def start21():
 
 def start22():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button486 = types.InlineKeyboardButton(text="Методист", callback_data='button486')
     button487 = types.InlineKeyboardButton(text="Психолог-педагог", callback_data='button487')
     button488 = types.InlineKeyboardButton(text="Профессор университета", callback_data='button488')
@@ -674,7 +671,7 @@ def start22():
 
 def start23():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button440 = types.InlineKeyboardButton(text="Инженеры", callback_data='button440')
     button441 = types.InlineKeyboardButton(text="Физики", callback_data='button441')
     button442 = types.InlineKeyboardButton(text="Архитекторы", callback_data='button442')
@@ -694,7 +691,7 @@ def start23():
 
 def start24():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button500 = types.InlineKeyboardButton(text="Финансисты", callback_data='button500')
     button501 = types.InlineKeyboardButton(text="Медики", callback_data='button501')
     button502 = types.InlineKeyboardButton(text="Геодезия", callback_data='button502')
@@ -714,7 +711,7 @@ def start24():
 
 def start25():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button513 = types.InlineKeyboardButton(text="Кредитный менеджер", callback_data='button513')
     button514 = types.InlineKeyboardButton(text="Главный бухгалтер", callback_data='button514')
     button515 = types.InlineKeyboardButton(text="Банковский консультант", callback_data='button515')
@@ -741,7 +738,8 @@ def start25():
     return keyboard
 
 def start26():
-    keyboard = types.InlineKeyboardMarkup()
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button523 = types.InlineKeyboardButton(text="Врач лечебного профиля", callback_data='button523')
     button524 = types.InlineKeyboardButton(text="Врачи-диагносты", callback_data='button524')
     button525 = types.InlineKeyboardButton(text="Другие медицины", callback_data='button525')
@@ -749,8 +747,399 @@ def start26():
     keyboard.row(button523)
     keyboard.row(button524)
     keyboard.row(button525)
-    keyboard.row(bt21) 
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
 
+def start27():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button526 = types.InlineKeyboardButton(text="Терапевт", callback_data='button526')
+    button527 = types.InlineKeyboardButton(text="Кардиолог", callback_data='button527')
+    button528 = types.InlineKeyboardButton(text="Невролог", callback_data='button528')
+    button529 = types.InlineKeyboardButton(text="Хирург", callback_data='button529')
+    button530 = types.InlineKeyboardButton(text="Ортопед-травматолог", callback_data='button530')
+    button531 = types.InlineKeyboardButton(text="Отоларинголог", callback_data='button531')
+    button532 = types.InlineKeyboardButton(text="Офтальмолог", callback_data='button532')
+    button533 = types.InlineKeyboardButton(text="Гинеколог", callback_data='button533')
+    button534 = types.InlineKeyboardButton(text="Педиатр", callback_data='button534')
+    button535 = types.InlineKeyboardButton(text="Диетолог", callback_data='button535')
+    button536 = types.InlineKeyboardButton(text="Психиатр", callback_data='button536')
+    button537 = types.InlineKeyboardButton(text="Физиотерапевт", callback_data='button537')
+    button538 = types.InlineKeyboardButton(text="Уролог", callback_data='button538')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button526)
+    keyboard.row(button527)
+    keyboard.row(button528)
+    keyboard.row(button529)
+    keyboard.row(button530)
+    keyboard.row(button531)
+    keyboard.row(button532)
+    keyboard.row(button533)
+    keyboard.row(button534)
+    keyboard.row(button535)
+    keyboard.row(button536)
+    keyboard.row(button537)
+    keyboard.row(button538)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start28():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button539 = types.InlineKeyboardButton(text="Лаборант лаборатории", callback_data='button539')
+    button540 = types.InlineKeyboardButton(text="Радиолог", callback_data='button540')
+    button541 = types.InlineKeyboardButton(text="Генетик", callback_data='button541')
+    button542 = types.InlineKeyboardButton(text="Патологоанатом", callback_data='button542')
+    button543 = types.InlineKeyboardButton(text="Фармацевт", callback_data='button543')
+    button544 = types.InlineKeyboardButton(text="Эндоскопист", callback_data='button544')
+    button545 = types.InlineKeyboardButton(text="Цитолог", callback_data='button545')
+    button546 = types.InlineKeyboardButton(text="Врач УЗИ", callback_data='button546')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button539)
+    keyboard.row(button540)
+    keyboard.row(button541)
+    keyboard.row(button542)
+    keyboard.row(button543)
+    keyboard.row(button544)
+    keyboard.row(button545)
+    keyboard.row(button546)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start29():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button547 = types.InlineKeyboardButton(text="Медицинская сестра", callback_data='button547')
+    button548 = types.InlineKeyboardButton(text="Санитар", callback_data='button548')
+    button549 = types.InlineKeyboardButton(text="Провизор", callback_data='button549')
+    button550 = types.InlineKeyboardButton(text="Ветеринар", callback_data='button550')
+    button551 = types.InlineKeyboardButton(text="Психотерапевт", callback_data='button551')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button547)
+    keyboard.row(button548)
+    keyboard.row(button549)
+    keyboard.row(button550)
+    keyboard.row(button551)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start30():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button552 = types.InlineKeyboardButton(text="Геодезист", callback_data='button552')
+    button553 = types.InlineKeyboardButton(text="Картограф", callback_data='button553')
+    button554 = types.InlineKeyboardButton(text="Топограф", callback_data='button554')
+    button555 = types.InlineKeyboardButton(text="Гидрограф", callback_data='button555')
+    button556 = types.InlineKeyboardButton(text="Гидрогеолог", callback_data='button556')
+    button557 = types.InlineKeyboardButton(text="Землеустроитель", callback_data='button557')
+    button558 = types.InlineKeyboardButton(text="Аэрофотосъемщик", callback_data='button558')
+    button559 = types.InlineKeyboardButton(text="Фотограмметрист", callback_data='button559')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button552)
+    keyboard.row(button553)
+    keyboard.row(button554)
+    keyboard.row(button555)
+    keyboard.row(button556)
+    keyboard.row(button557)
+    keyboard.row(button558)
+    keyboard.row(button559)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start31():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button560 = types.InlineKeyboardButton(text="Графический дизайнер", callback_data='button560')
+    button561 = types.InlineKeyboardButton(text="Дизайнер интерьера", callback_data='button561')
+    button562 = types.InlineKeyboardButton(text="Модельер-конструктор", callback_data='button562')
+    button563 = types.InlineKeyboardButton(text="Ландшафтный дизайнер", callback_data='button563')
+    button564 = types.InlineKeyboardButton(text="Архитектор-дизайнер", callback_data='button564')
+    button565 = types.InlineKeyboardButton(text="Web-дизайнер", callback_data='button565')
+    button566 = types.InlineKeyboardButton(text="Логотип-дизайнер", callback_data='button566')
+    button567 = types.InlineKeyboardButton(text="Игровой художник", callback_data='button567')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button560)
+    keyboard.row(button561)
+    keyboard.row(button562)
+    keyboard.row(button563)
+    keyboard.row(button564)
+    keyboard.row(button565)
+    keyboard.row(button566)
+    keyboard.row(button567)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start32():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button568 = types.InlineKeyboardButton(text="Микробиолог", callback_data='button568')
+    button569 = types.InlineKeyboardButton(text="Биохимик", callback_data='button569')
+    button570 = types.InlineKeyboardButton(text="Ихтиолог", callback_data='button570')
+    button571 = types.InlineKeyboardButton(text="Агроном", callback_data='button571')
+    button572 = types.InlineKeyboardButton(text="Иммунолог", callback_data='button572')
+    button573 = types.InlineKeyboardButton(text="Анатом", callback_data='button573')
+    button574 = types.InlineKeyboardButton(text="Вирусолог", callback_data='button574')
+    button575 = types.InlineKeyboardButton(text="Орнитолог", callback_data='button575')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button568)
+    keyboard.row(button569)
+    keyboard.row(button570)
+    keyboard.row(button571)
+    keyboard.row(button572)
+    keyboard.row(button573)
+    keyboard.row(button574)
+    keyboard.row(button575)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start33():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button507 = types.InlineKeyboardButton(text="Финансисты", callback_data='button507')
+    button508 = types.InlineKeyboardButton(text="Медики", callback_data='button508')
+    button509 = types.InlineKeyboardButton(text="Геодезия", callback_data='button509')
+    button510 = types.InlineKeyboardButton(text="Дизайнеры", callback_data='button510')
+    button511 = types.InlineKeyboardButton(text="Биологи", callback_data='button511')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button507)
+    keyboard.row(button508)
+    keyboard.row(button509)
+    keyboard.row(button510)
+    keyboard.row(button511)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start34():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button584 = types.InlineKeyboardButton(text="Инженерия", callback_data='button584')
+    button585 = types.InlineKeyboardButton(text="Биология", callback_data='button585')
+    button586 = types.InlineKeyboardButton(text="Экономика", callback_data='button586')
+    button587 = types.InlineKeyboardButton(text="Информатика", callback_data='button587')
+    button588 = types.InlineKeyboardButton(text="Экология", callback_data='button588')
+    button589 = types.InlineKeyboardButton(text="Ознакомиться🔎", callback_data='button589')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button584)
+    keyboard.row(button585)
+    keyboard.row(button586)
+    keyboard.row(button587)
+    keyboard.row(button588)
+    keyboard.row(button589)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start35():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button595 = types.InlineKeyboardButton(text="Архитектор", callback_data='button595')
+    button596 = types.InlineKeyboardButton(text="Инженер-механик", callback_data='button596')
+    button597 = types.InlineKeyboardButton(text="Робототехник", callback_data='button597')
+    button598 = types.InlineKeyboardButton(text="Машиностроитель", callback_data='button598')
+    button599 = types.InlineKeyboardButton(text="Авиационный инженер", callback_data='button599')
+    button600 = types.InlineKeyboardButton(text="Химический инженер", callback_data='button600')
+    button601 = types.InlineKeyboardButton(text="Инженер по материалам", callback_data='button601')
+    button602 = types.InlineKeyboardButton(text="Инженер-эколог", callback_data='button602')
+    button603 = types.InlineKeyboardButton(text="Инженер-исследователь", callback_data='button603')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button595)
+    keyboard.row(button596)
+    keyboard.row(button597)
+    keyboard.row(button598)
+    keyboard.row(button599)
+    keyboard.row(button600)
+    keyboard.row(button601)
+    keyboard.row(button602)
+    keyboard.row(button603)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start36():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button604 = types.InlineKeyboardButton(text="Ботаник", callback_data='button604')
+    button605 = types.InlineKeyboardButton(text="Зоолог", callback_data='button605')
+    button606 = types.InlineKeyboardButton(text="Фермер ", callback_data='button606')
+    button607 = types.InlineKeyboardButton(text="Микробиолог", callback_data='button607')
+    button608 = types.InlineKeyboardButton(text="Биолог-исследователь", callback_data='button608')
+    button609 = types.InlineKeyboardButton(text="Паразитолог", callback_data='button609')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button604)
+    keyboard.row(button605)
+    keyboard.row(button606)
+    keyboard.row(button607)
+    keyboard.row(button608)
+    keyboard.row(button609)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start37():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button610 = types.InlineKeyboardButton(text="Финансовый аналитик", callback_data='button610')
+    button611 = types.InlineKeyboardButton(text="Менеджер по продажам", callback_data='button611')
+    button612 = types.InlineKeyboardButton(text="Маркетолог", callback_data='button612')
+    button613 = types.InlineKeyboardButton(text="Акционер", callback_data='button613')
+    button614 = types.InlineKeyboardButton(text="Страховой агент", callback_data='button614')
+    button615 = types.InlineKeyboardButton(text="Частный нотариус", callback_data='button615')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button610)
+    keyboard.row(button611)
+    keyboard.row(button612)
+    keyboard.row(button613)
+    keyboard.row(button614)
+    keyboard.row(button615)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start38():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button616 = types.InlineKeyboardButton(text="Программист", callback_data='button616')
+    button617 = types.InlineKeyboardButton(text="Веб-разработчик", callback_data='button617')
+    button618 = types.InlineKeyboardButton(text="Аналитик данных", callback_data='butto6186')
+    button619 = types.InlineKeyboardButton(text="Тестировщик ПО", callback_data='button619')
+    button620 = types.InlineKeyboardButton(text="DevOps инженер", callback_data='button620')
+    button621 = types.InlineKeyboardButton(text="Админ баз данных", callback_data='button621')
+    button622 = types.InlineKeyboardButton(text="Системный админ", callback_data='button622')
+    button623 = types.InlineKeyboardButton(text="Бизнес-аналитик", callback_data='button623')
+    button624 = types.InlineKeyboardButton(text="Графический дизайнер", callback_data='button624')
+    button625 = types.InlineKeyboardButton(text="Преподаватель", callback_data='button625')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button616)
+    keyboard.row(button617)
+    keyboard.row(button618)
+    keyboard.row(button619)
+    keyboard.row(button620)
+    keyboard.row(button621)
+    keyboard.row(button622)
+    keyboard.row(button623)
+    keyboard.row(button624)
+    keyboard.row(button625)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start39():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button626 = types.InlineKeyboardButton(text="Эколог", callback_data='button626')
+    button627 = types.InlineKeyboardButton(text="Биолог", callback_data='button627')
+    button628 = types.InlineKeyboardButton(text="Гидролог", callback_data='button628')
+    button629 = types.InlineKeyboardButton(text="Климатолог", callback_data='button629')
+    button630 = types.InlineKeyboardButton(text="Почвовед", callback_data='button630')
+    button631 = types.InlineKeyboardButton(text="Агроэколог", callback_data='button631')
+    button632 = types.InlineKeyboardButton(text="Географ", callback_data='button632')
+    button633 = types.InlineKeyboardButton(text="Зелёный инженер", callback_data='button633')
+    keyboard.row(button626)
+    keyboard.row(button627)
+    keyboard.row(button628)
+    keyboard.row(button629)
+    keyboard.row(button630)
+    keyboard.row(button631)
+    keyboard.row(button632)
+    keyboard.row(button633)
+    last_keyboard = keyboard
+    return keyboard
+
+def start40():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button590 = types.InlineKeyboardButton(text="Инженерия", callback_data='button590')
+    button591 = types.InlineKeyboardButton(text="Биология", callback_data='button591')
+    button592 = types.InlineKeyboardButton(text="Экономика", callback_data='button592')
+    button593 = types.InlineKeyboardButton(text="Информатика", callback_data='button593')
+    button594 = types.InlineKeyboardButton(text="Экология", callback_data='button594')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button590)
+    keyboard.row(button591)
+    keyboard.row(button592)
+    keyboard.row(button593)
+    keyboard.row(button594)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start41():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button595 = types.InlineKeyboardButton(text="Механика ", callback_data='button595')
+    button596 = types.InlineKeyboardButton(text="Электротехника ", callback_data='button596')
+    button597 = types.InlineKeyboardButton(text="ИИ", callback_data='button597')
+    button598 = types.InlineKeyboardButton(text="Робототехника", callback_data='button598')
+    button599 = types.InlineKeyboardButton(text="3D-графика", callback_data='button599')
+    button600 = types.InlineKeyboardButton(text="Криптография ", callback_data='button600')
+    button601 = types.InlineKeyboardButton(text="Геодезия", callback_data='button601')
+    button602 = types.InlineKeyboardButton(text="Ознакомиться🔎", callback_data='button602')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button595)
+    keyboard.row(button596)
+    keyboard.row(button597)
+    keyboard.row(button598)
+    keyboard.row(button599)
+    keyboard.row(button600)
+    keyboard.row(button601)
+    keyboard.row(button602)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start42():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button626 = types.InlineKeyboardButton(text="Инженер-механик", callback_data='button626')
+    button627 = types.InlineKeyboardButton(text="Мастер ремонта техники", callback_data='button627')
+    button628 = types.InlineKeyboardButton(text="Автомеханик", callback_data='button628')
+    button629 = types.InlineKeyboardButton(text="Авиатехник", callback_data='button629')
+    button630 = types.InlineKeyboardButton(text="Судовой механик", callback_data='button630')
+    button631 = types.InlineKeyboardButton(text="Машинист", callback_data='button631')
+    button632 = types.InlineKeyboardButton(text="Крановщик", callback_data='button632')
+    button633 = types.InlineKeyboardButton(text="Технолог", callback_data='button633')
+    keyboard.row(button626)
+    keyboard.row(button627)
+    keyboard.row(button628)
+    keyboard.row(button629)
+    keyboard.row(button630)
+    keyboard.row(button631)
+    keyboard.row(button632)
+    keyboard.row(button633)
+    last_keyboard = keyboard
+    return keyboard
+
+def start43():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup()
+    button634 = types.InlineKeyboardButton(text="Инженер-электрик", callback_data='button634')
+    button635 = types.InlineKeyboardButton(text="Техник-электрик", callback_data='button635')
+    button636 = types.InlineKeyboardButton(text="Электромонтажник", callback_data='button636')
+    button637 = types.InlineKeyboardButton(text="Специалист по энергетике", callback_data='button637')
+    button638 = types.InlineKeyboardButton(text="НГЭ", callback_data='button638')
+    button639 = types.InlineKeyboardButton(text="Электромеханик", callback_data='button639')
+    button640 = types.InlineKeyboardButton(text="Проектировщик электросистем", callback_data='button640')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button634)
+    keyboard.row(button635)
+    keyboard.row(button636)
+    keyboard.row(button637)
+    keyboard.row(button638)
+    keyboard.row(button639)
+    keyboard.row(button640)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+    
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline_message(call):
@@ -2937,13 +3326,783 @@ Senior (опытный): от 150 тыс. до 250 тыс. рублей и вы�
             bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
-            text="✏️ Выберете раздел, который вам нравится или нравился в школе.🌟",
+            text="✏️ Выберете раздел, вдохновлял вас в школе.🌟",
             reply_markup=start26()
             )
 
+        elif call.data == "button523":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start27()
+            )
 
+        elif call.data == 'button526':
+            bot.send_message(call.message.chat.id, "Терапевт -- это врач общего профиля, который занимается диагностикой, лечением и профилактикой заболеваний внутренних органов. Это первый специалист, к которому обращаются пациенты при появлении симптомов недомогания.")
+            bot.send_message(call.message.chat.id, '''В разных городах России зарплата врача-терапевта зависит от опыта работы:
+Москва: 70 000–95 000 рублей в месяц (опыт от 1 года), 95 000–110 000 рублей (опыт от 3 лет), 110 000–170 000 рублей (опыт от 5 лет).
+Санкт-Петербург: 60 000–80 000 рублей (опыт от 1 года), 80 000–100 000 рублей (опыт от 3 лет), 100 000–150 000 рублей (опыт от 5 лет).
+Екатеринбург: 55 000–75 000 рублей (опыт от 1 года), 75 000–85 000 рублей (опыт от 3 лет), 85 000–135 000 рублей (опыт от 5 лет).''')
+        elif call.data == 'button527':
+            bot.send_message(call.message.chat.id, "Кардиолог -- это специалист, который занимается диагностикой, лечением и профилактикой заболеваний сердца и сосудов. Его задача — сохранить здоровье сердечно-сосудистой системы пациента, вовремя выявить патологию и предотвратить осложнения.")
+            bot.send_message(call.message.chat.id, '''Некоторые примеры зарплат в разных городах:
+Москва. Начинающий специалист — 80 000–120 000 рублей, опытный специалист — 150 000–250 000 рублей, ведущий специалист — 300 000–500 000 рублей.
+Санкт-Петербург. Начинающий специалист — 70 000–100 000 рублей, опытный специалист — 130 000–200 000 рублей, ведущий специалист — 250 000–400 000 рублей.
+Екатеринбург. Начинающий специалист — 60 000–90 000 рублей, опытный специалист — 100 000–180 000 рублей, ведущий специалист — 200 000–350 000 рублей.''')
+        elif call.data == 'button528':
+            bot.send_message(call.message.chat.id, "Невролог -- это врач, который занимается диагностикой, лечением и профилактикой заболеваний нервной системы. Работает с центральной (головной и спинной мозг) и периферической (нервы и нервные сплетения) нервной системой, а также с мышечной системой, поскольку она тесно связана с работой нервов.")
+            bot.send_message(call.message.chat.id, '''Зарплата невролога зависит от клиники, опыта работы и региона, в котором он трудится:
+Начальный уровень: неврологи без опыта могут зарабатывать от 80 000 до 120 000 рублей в месяц.
+Средний уровень: опытные специалисты могут получать от 120 000 до 150 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше.
+Эксперт: топовые неврологи, работающие на высокобюджетных проектах, могут зарабатывать от 150 000 до 200 000 рублей в месяц.''')
+        elif call.data == 'button529':
+            bot.send_message(call.message.chat.id, "Хирург -- это это врач, который специализируется на заболеваниях, травмах и патологиях, требующих оперативного вмешательства. Может работать как с людьми, так и с животными (в случае ветеринарных хирургов).")
+            bot.send_message(call.message.chat.id, '''Пластические хирурги: от 300 000 до 2 000 000 рублей(в зависимости от опыта)
+Нейрохирурги: 150 000–300 000 рублей
+Кардиохирурги: 200 000 рублей, а топовые специалисты получают до 500 000 рублей
+Общие хирурги: 100 000–180 000 рублей''')
+        elif call.data == 'button530':
+            bot.send_message(call.message.chat.id, "Ортопед-травматолог -- это врач, специализирующийся на диагностике, лечении и профилактике заболеваний и травм опорно-двигательной системы. В его поле зрения — кости, суставы, связки, сухожилия и мышцы.")
+            bot.send_message(call.message.chat.id, '''Минимальный уровень: 130 000–180 000 рублей.
+Средний уровень: 180 000–245 000 рублей.
+Повышенный уровень: 245 000–350 000 рублей.''')
+        elif call.data == 'button531':
+            bot.send_message(call.message.chat.id, "Отоларинголог -- это специалист, который занимается диагностикой, лечением и профилактикой заболеваний уха, горла и носа, а также связанных с ними структур: глотки, гортани, носовых пазух и даже шеи. Полное название области деятельности — оториноларингология. ")
+            bot.send_message(call.message.chat.id, '''Отоларинголог (ЛОР) может зарабатывать от 110 000 до 300 000 рублей в зависимости от уровня квалификации:
+минимальный уровень — 110 000–140 000 рублей;
+средний уровень — 140 000–190 000 рублей;
+повышенный уровень — 190 000–300 000 рублей.''')
+        elif call.data == 'button532':
+            bot.send_message(call.message.chat.id, "Офтальмолог -- это врач, специализирующийся на диагностике, лечении и профилактике заболеваний и травм органов зрения. В прошлом таких специалистов называли окулистами, но сегодня официально используется термин «офтальмолог», а «окулист» — разговорное слово.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень: от 80 000 до 120 000 рублей в месяц.
+Средний уровень: от 120 000 до 170 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше.
+Эксперт: от 170 000 до 200 000 рублей в месяц. Такую зарплату получают топовые офтальмологи, работающие на высокобюджетных проектах, а иногда и значительно больше.''')
+        elif call.data == 'button533':
+            bot.send_message(call.message.chat.id, "Гинеколог -- это врач, который занимается диагностикой, лечением и профилактикой заболеваний женской репродуктивной системы. ")
+            bot.send_message(call.message.chat.id, '''Максимальные предлагаемые зарплаты этим специалистам в начинаются от 165 тыс. рублей.
+''')
+        elif call.data == 'button534':
+            bot.send_message(call.message.chat.id, "Педиатр -- это врач, занимающийся диагностикой, лечением и профилактикой заболеваний у детей и подростков до 18 лет. Его задача — следить за развитием ребёнка, своевременно выявлять возможные проблемы со здоровьем и помогать родителям поддерживать оптимальное состояние здоровья.")
+            bot.send_message(call.message.chat.id, '''Зарплата педиатра в России варьируется от 45 000 до 120 000 рублей, в Москве — от 70 000 до 150 000 рублей.
+''')
+        elif call.data == 'button535':
+            bot.send_message(call.message.chat.id, "Диетолог -- это  специалист в области правильного и лечебного питания, который занимается организацией рационального питания для здоровых людей и пациентов с различными заболеваниями. Диетология — раздел медицины, посвящённый организации рационального питания.")
+            bot.send_message(call.message.chat.id, '''Стажёры и молодые специалисты:
+крупные города (Москва, Санкт-Петербург) — от 30 000 до 50 000 рублей в месяц;
+средние города — от 20 000 до 40 000 рублей в месяц.
+Диетологи со средним опытом (1–3 года):
+крупные города — от 40 000 до 70 000 рублей в месяц;
+средние города — от 30 000 до 60 000 рублей в месяц.
+Опытные диетологи (3–5 лет и более):
+крупные города — от 60 000 до 100 000 рублей в месяц;
+средние города — от 40 000 до 80 000 рублей в месяц.''')
+        elif call.data == 'button536':
+            bot.send_message(call.message.chat.id, "Психиатр -- это  врач с медицинским образованием, специализирующийся на диагностике, лечении и профилактике психических расстройств. К нему обращаются пациенты с серьёзными нарушениями психики, мешающими полноценной жизни и адаптации в обществе.")
+            bot.send_message(call.message.chat.id, '''Москва. В государственных психиатрических клиниках столицы психиатры получают от 50 до 80 тысяч рублей, в частных медицинских центрах — 120–150 тысяч рублей в месяц. Детские психиатры в Москве зарабатывают от 70 до 80 тысяч рублей на участковых должностях.
+Санкт-Петербург. В государственных учреждениях северной столицы психиатры получают 45–70 тысяч рублей, в частных клиниках — до 90–100 тысяч рублей ежемесячно.''')
+        elif call.data == 'button537':
+            bot.send_message(call.message.chat.id, "Физиотерапевт -- это специалист, который использует физические факторы (холод, тепло, ультразвук, магнитные поля и электрический ток) для лечения, реабилитации и профилактики заболеваний. Физиотерапия не заменяет медикаментозную терапию, а дополняет её, повышая эффективность и ускоряя процесс выздоровления.")
+            bot.send_message(call.message.chat.id, '''Начинающий физиотерапевт (менее 1 года опыта):
+малые города и сельская местность — от 25 000 до 40 000 рублей в месяц;
+большие города — от 30 000 до 50 000 рублей в месяц;
+Опытный физиотерапевт (1–5 лет опыта):
+малые города и сельская местность — от 40 000 до 60 000 рублей в месяц;
+большие города — от 50 000 до 80 000 рублей в месяц;''')
+        elif call.data == 'button538':
+            bot.send_message(call.message.chat.id, "Уролог -- это врач, который специализируется на диагностике, лечении и профилактике заболеваний мочевыделительной системы у мужчин и женщин, а также мужских репродуктивных органов.")
+            bot.send_message(call.message.chat.id, '''Зарплата уролога в России составляет 50 000–80 000 рублей, в Москве — 60 000–270 000 рублей. 
+''')
 
+        elif call.data == "button524":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start28()
+            )
 
+        elif call.data == 'button539':
+            bot.send_message(call.message.chat.id, "Лаборант лаборатории -- это специалист, который проводит лабораторные испытания и исследования в различных отраслях промышленности, науки и медицины.")
+            bot.send_message(call.message.chat.id, '''В среднем по России начинающему специалисту предлагают от 30 до 40 тысяч рублей в месяц.
+''')
+        elif call.data == 'button540':
+            bot.send_message(call.message.chat.id, "Радиолог -- это  специалист, занимающийся диагностикой и лечением заболеваний с использованием методов лучевой диагностики и терапии. Использует различные методы визуализации: рентгенографию, компьютерную томографию.")
+            bot.send_message(call.message.chat.id, '''Зарплата врача-радиолога варьируется в зависимости от региона, квалификации и места работы.
+начинающий специалист — 50 000–70 000 рублей;
+радиолог с опытом работы 3–5 лет — 80 000–120 000 рублей;
+ведущий специалист в частной клинике — 130 000–200 000 рублей;
+врач высшей категории в федеральном центре — от 150 000 рублей.''')
+        elif call.data == 'button541':
+            bot.send_message(call.message.chat.id, "Генетик -- это специалист, изучающий наследственные признаки живых организмов, их строение и функции на молекулярном уровне. Генетики исследуют гены, их структуру, функции, взаимодействие и эволюцию, а также изучают генетические заболевания, вариации и мутации.")
+            bot.send_message(call.message.chat.id, '''Уровень дохода генетика зависит от места работы, региона, квалификации, опыта специалиста и объёма выполняемой работы. Некоторые примеры:
+Государственные медико-генетические центры и консультации: от 50 000 до 70 000 рублей в месяц.
+Частные медицинские центры: от 100 000 до 200 000 рублей.''')
+        elif call.data == 'button542':
+            bot.send_message(call.message.chat.id, "Патологоанатом -- это врач, занимающийся прижизненной и посмертной диагностикой заболеваний в ходе изучения патологических изменений в строении органов и тканей пациента.")
+            bot.send_message(call.message.chat.id, '''Некоторые примеры зарплат в разных регионах:
+Москва — от 25 до 55 тысяч рублей в месяц.
+Санкт-Петербург — от 25 до 50 тысяч рублей в месяц.
+Новосибирск — 35–45 тысяч рублей.
+Екатеринбург — 30–50 тысяч рублей.
+Казань — 28–40 тысяч рублей.
+Красноярск — 35–55 тысяч рублей.''')
+        elif call.data == 'button543':
+            bot.send_message(call.message.chat.id, "Фармацевт -- это  специалист в области исследования, изготовления и продажи лекарственных препаратов. Он разбирается в составе лекарств, их действии, взаимодействии друг с другом, побочных эффектах. Знает, какой препарат выбрать среди аналогов, как его принимать, где хранить.")
+            bot.send_message(call.message.chat.id, '''Некоторые регионы и предлагаемая зарплата:
+Mало-Ненецкий автономный округ — 98,5 тыс. рублей;
+Москва — 91,3 тыс. рублей;
+Московская область — 87 тыс. рублей;
+Мурманская область — 85 тыс. рублей;''')
+        elif call.data == 'button544':
+            bot.send_message(call.message.chat.id, "Эндоскопист -- это врач, который проводит диагностику и лечение заболеваний внутренних органов с помощью эндоскопических методик. Специалист использует эндоскоп — гибкую трубку с камерой и подсветкой, которая передаёт изображение на монитор.")
+            bot.send_message(call.message.chat.id, '''Зарплата врача-эндоскописта в России зависит от региона, опыта работы, должности и специфики лечебного учреждения.
+по России — 60 000–100 000 рублей;
+в Москве — 80 000–150 000 рублей и более.''')
+        elif call.data == 'button545':
+            bot.send_message(call.message.chat.id, "Цитолог -- это врач клинико-лабораторной диагностики, который исследует клетки для выявления патологий. Цитология (клеточная биология) изучает структуру и процессы внутри клеток живых организмов.")
+            bot.send_message(call.message.chat.id, '''Зарплата цитолога в России варьируется в зависимости от опыта работы, региона и типа медицинского учреждения:
+Начинающий специалист: 45 000–65 000 рублей.
+Цитолог с опытом 3–5 лет: 70 000–100 000 рублей.
+Ведущий специалист/заведующий лабораторией: 110 000–160 000 рублей.''')
+        elif call.data == 'button546':
+            bot.send_message(call.message.chat.id, "Врач УЗИ -- это специалист, который исследует внутренние органы и ткани пациента с помощью ультразвуковых волн. УЗИ позволяет увидеть двухмерное изображение внутренних органов в реальном времени, что помогает поставить диагноз и назначить лечение. ")
+            bot.send_message(call.message.chat.id, '''Заработная плата зависит от квалификации специалиста, региона трудоустройства и типа медицинского учреждения.
+Начинающий специалист в государственном секторе — 50 000–70 000 рублей.
+Опытный врач в частных клиниках — 80 000–150 000 рублей.
+Ведущий специалист в Москве — до 200 000 рублей.''')
 
+        elif call.data == "button525":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start29()
+            )
 
+        elif call.data == 'button547':
+            bot.send_message(call.message.chat.id, "Медицинская сестра -- это специалист со средним специальным медицинским образованием в области сестринского дела. Выступает помощником врача в лечебно-профилактических учреждениях, выполняет врачебные и фельдшерские назначения.")
+            bot.send_message(call.message.chat.id, '''Операционная медсестра получает 32 тысячи рублей, хирургическая — чуть меньше 35 тысяч, старшая медицинская сестра — около 37 тысяч, процедурная медсестра — 39 тысяч рублей.
+''')
+        elif call.data == 'button548':
+            bot.send_message(call.message.chat.id, "Санитар -- это медицинский работник, который выполняет вспомогательные функции в больницах и иных медицинских учреждениях.")
+            bot.send_message(call.message.chat.id, '''Москва и Санкт-Петербург:
+начальный уровень — 30 000–40 000 рублей;
+опыт 2–3 года — 40 000–50 000 рублей;
+опыт 5+ лет — 50 000–60 000 рублей.
+Крупные города (миллионники):
+начальный уровень — 28 000–35 000 рублей;
+опыт 2–3 года — 35 000–45 000 рублей;
+опыт 5+ лет — 45 000–55 000 рублей.
+''')
+        elif call.data == 'button549':
+            bot.send_message(call.message.chat.id, "Провизор -- это специалист в области фармацевтики с высшим фармацевтическим образованием. Он занимается разработкой, производством и контролем качества лекарственных средств, а также консультирует пациентов по вопросам применения медикаментов. ")
+            bot.send_message(call.message.chat.id, '''Москва: максимальная зарплата — 150 тысяч рублей, средний уровень дохода — около 95 тысяч рублей.
+Санкт-Петербург: максимальная зарплата — до 125 тысяч рублей, средний уровень дохода — 78 тысяч рублей.''')
+        elif call.data == 'button550':
+            bot.send_message(call.message.chat.id, "Ветеринар -- это специалист в области ветеринарной медицины, который занимается диагностикой, лечением и профилактикой заболеваний у животных.")
+            bot.send_message(call.message.chat.id, '''Москва:
+средняя зарплата — от 50 000 до 84 900 рублей в месяц;
+в частных клиниках опытные специалисты могут зарабатывать до 200 000 рублей и выше;
+главные врачи — до 300 000 рублей в месяц.
+Города-миллионники (Новосибирск, Екатеринбург, Казань и др.):
+средняя зарплата — от 50 000 до 100 000 рублей в месяц;
+ассистенты — от 20 000 рублей;
+менеджеры в сфере животноводства — до 150 000 рублей.
+''')
+        elif call.data == 'button551':
+            bot.send_message(call.message.chat.id, "Психотерапевт -- это это специалист, который помогает людям справляться с эмоциональными и психологическими трудностями с помощью психотерапии.")
+            bot.send_message(call.message.chat.id, '''Без опыта — 25 000–40 000 рублей.
+1–3 года — 50 000–80 000 рублей.
+3–6 лет — 100 000–150 000 рублей.
+Свыше 6 лет — 150 000–250 000 рублей.
+''')
+
+        elif call.data == "button502":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start30()
+            )
+
+        elif call.data == 'button552':
+            bot.send_message(call.message.chat.id, "Геодезист -- это специалист в области геодезии, который занимается измерением и картографированием земной поверхности. Его работа лежит в основе строительства, проектирования и землеустройства.")
+            bot.send_message(call.message.chat.id, '''Некоторые диапазоны зарплат:
+Начальный уровень — от 40 000 до 50 000 рублей в месяц для геодезистов без опыта.
+Средний уровень — от 60 000 до 90 000 рублей в месяц для геодезиста с несколькими годами опыта.
+Высокий уровень — специалисты с многолетним опытом и хорошими навыками работы с современным оборудованием могут получать более 100 000 рублей в месяц.''')
+        elif call.data == 'button553':
+            bot.send_message(call.message.chat.id, "Картограф -- это специалист, который занимается созданием, анализом и интерпретацией географических карт и других картографических продуктов.")
+            bot.send_message(call.message.chat.id, '''Некоторые примеры заработка картографов в зависимости от опыта работы:
+Начинающие специалисты без опыта или с минимальным опытом работы могут зарабатывать от 40 000 до 60 000 рублей в месяц.
+Специалисты среднего уровня с опытом работы от 2 до 5 лет зарабатывают в среднем от 70 000 до 100 000 рублей в месяц.
+Опытные картографы с опытом более 5 лет и глубокими знаниями в области ГИС и картографических технологий могут зарабатывать от 120 000 до 150 000 рублей.''')
+        elif call.data == 'button554':
+            bot.send_message(call.message.chat.id, "Топограф -- это специалист, который занимается измерением и отображением земной поверхности на планах и картах.")
+            bot.send_message(call.message.chat.id, '''Зарплата топографа в России — от 50 000 до 210 000 рублей в месяц. В Москве — 80 000–190 000 рублей. 
+''')
+        elif call.data == 'button555':
+            bot.send_message(call.message.chat.id, "Гидрограф -- это специалист, который занимается измерением и описанием физических характеристик океанов, морей, прибрежных районов, озёр и рек, а также прогнозированием их изменения на протяжении времени.")
+            bot.send_message(call.message.chat.id, '''Гидрографическая служба:
+начальный уровень (без опыта): от 30 000 до 50 000 рублей в месяц;
+средний уровень (с опытом 3–5 лет): от 50 000 до 80 000 рублей в месяц;
+Гидрографические экспедиции:
+В среднем, оплата может быть от 50 000 до 100 000 рублей в месяц.''')
+        elif call.data == 'button556':
+            bot.send_message(call.message.chat.id, "Гидрогеолог -- это специалист в области геологии, который изучает подземные воды, их распределение, движение и взаимодействие с окружающими геологическими средами.")
+            bot.send_message(call.message.chat.id, '''Диапазон зарплат:
+Начинающий специалист — 45 000–65 000 рублей;
+Опытный гидрогеолог — 70 000–120 000 рублей;
+Ведущий специалист/руководитель проекта — 130 000–200 000+ рублей.
+''')
+        elif call.data == 'button557':
+            bot.send_message(call.message.chat.id, "Землеустроитель -- это специалист, занимающийся планированием, разработкой и реализацией мероприятий по рациональному использованию и охране земельных ресурсов.")
+            bot.send_message(call.message.chat.id, '''Начинающие специалисты — 45 000–65 000 рублей.
+Специалисты с опытом 2–4 года — 70 000–100 000 рублей.
+Ведущие специалисты и руководители проектов — 110 000–180 000 рублей.''')
+        elif call.data == 'button558':
+            bot.send_message(call.message.chat.id, "Аэрофотосъемщик -- это специалист, занимающийся фотографированием поверхности земли, объектов и явлений с воздуха с использованием фотокамер, установленных на самолётах, вертолётах, дронах или других летательных аппаратах.")
+            bot.send_message(call.message.chat.id, '''Начинающие специалисты могут получать от 30 000 до 50 000 рублей в месяц.
+Опытные профессионалы с хорошим портфолио зарабатывают от 70 000 до 150 000 рублей и выше.''')
+        elif call.data == 'button559':
+            bot.send_message(call.message.chat.id, "Фотограмметрист -- это  специалист по фотограмметрии, который работает с данными аэрофотосъёмки (беспилотной или пилотируемой) для создания цифровых моделей местности и ортофотопланов, а также проводит анализ по полученным результатам.")
+            bot.send_message(call.message.chat.id, '''Фотограмметрист (оператор БПЛА) в Москве может зарабатывать от 120 000 до 150 000 рублей за месяц.
+''')
+
+        elif call.data == "button503":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start31()
+            )
+
+        elif call.data == 'button560':
+            bot.send_message(call.message.chat.id, "Графический дизайнер -- это специалист, который создаёт визуальные образы для передачи информации, идей и эмоций. Он работает со всем, что можно передать в виде образа: изображениями, цветом, шрифтами, фотографиями и другими элементами.")
+            bot.send_message(call.message.chat.id, '''Junior (0–1 год): 25 000–45 000 рублей.
+Middle (1–3 года): 45 000–90 000 рублей.
+Senior (3–5 лет): 80 000–150 000 рублей.
+Lead / Арт-директор (5+ лет): 150 000–350 000 рублей и выше.''')
+        elif call.data == 'button561':
+            bot.send_message(call.message.chat.id, "Дизайнер интерьера -- это специалист, который занимается проектированием и оформлением интерьеров жилых и нежилых помещений. Он разрабатывает концепции дизайна, выбирает цветовые гаммы, материалы, мебель и другие элементы интерьера.")
+            bot.send_message(call.message.chat.id, '''Новички с минимальным опытом могут рассчитывать на 40 000–70 000 рублей в месяц, особенно в регионах.
+В крупных городах и столичных студиях ставки выше: от 90 000 до 180 000 рублей в зависимости от уровня компетенций и сложности проектов.
+В городах-миллионниках (Казань, Екатеринбург, Новосибирск и другие) в среднем дизайнер интерьера может рассчитывать на доход в диапазоне от 90 000 до 130 000 рублей в месяц.''')
+        elif call.data == 'button562':
+            bot.send_message(call.message.chat.id, "Модельер-конструктор -- это  специалист, который занимается разработкой и созданием одежды с учётом модных трендов, технологий и нужд клиентов. Его работа включает как творческую, так и техническую составляющую: модельер создаёт эскизы, разрабатывает модели одежды и ведёт контроль качества на всех этапах производства.")
+            bot.send_message(call.message.chat.id, '''Заработная плата зависит от уровня опыта и места работы:
+Начальный уровень — от 60 000 до 90 000 рублей в месяц (модельеры-конструкторы без опыта).
+Средний уровень — от 90 000 до 150 000 рублей в месяц (опытные специалисты, в крупных городах и на известных проектах эта сумма может быть значительно выше).
+Эксперт — от 150 000 до 250 000 рублей в месяц (топовые модельеры-конструкторы, работающие на высокобюджетных проектах).''')
+        elif call.data == 'button563':
+            bot.send_message(call.message.chat.id, "Ландшафтный дизайнер -- это специалист, который занимается проектированием, оформлением и озеленением частных участков и общественных территорий. Задача — создать красивые и эстетичные пространства, но и учесть функциональность, экологические и инженерные аспекты.")
+            bot.send_message(call.message.chat.id, '''Москва — от 50 до 300 тысяч рублей в месяц.
+Краснодар — от 80 тысяч рублей за разработку проектов по благоустройству.
+Екатеринбург и Волгоград — от 40 тысяч рублей.''')
+        elif call.data == 'button564':
+            bot.send_message(call.message.chat.id, "Архитектор-дизайнер -- это специалист в области проектирования и дизайна объектов различного назначения. Он совмещает знания в области архитектуры и дизайна, создаёт эстетически привлекательные, эргономичные, функциональные пространства.")
+            bot.send_message(call.message.chat.id, '''В среднем новички зарабатывают от 40 000 до 50 000 рублей в месяц.
+Более опытные дизайнеры могут рассчитывать на зарплату от 50 000 до 100 000 рублей.''')
+        elif call.data == 'button565':
+            bot.send_message(call.message.chat.id, "Web-дизайнер -- это специалист, который занимается визуальным оформлением интернет-ресурсов, включая веб-сайты и приложения. Его задача — создать интерфейсы, которые привлекают пользователей и делают взаимодействие с сайтом интуитивно понятным.")
+            bot.send_message(call.message.chat.id, '''Начинающий дизайнер (Junior): в Москве — от 50 000 до 70 000 рублей, в регионах — от 35 000 до 55 000 рублей.
+Middle: в Москве — от 80 000 до 120 000 рублей, в регионах — от 60 000 до 90 000 рублей.
+Senior: в Москве — от 180 000 рублей, в регионах — от 130 000 рублей.''')
+        elif call.data == 'button566':
+            bot.send_message(call.message.chat.id, "Логотип-дизайнер -- это специалист, который создаёт изображения, используемые как эмблемы или символы бренда.")
+            bot.send_message(call.message.chat.id, '''В начале карьеры дизайнеры могут претендовать на зарплату 30 000–50 000 рублей в месяц в регионах и 55 000–100 000 рублей в Москве.
+Профессионалы со стажем работы могут рассчитывать на доход от 70 000 рублей в месяц в среднем по России, а в столице получать свыше 100 000 рублей.''')
+        elif call.data == 'button567':
+            bot.send_message(call.message.chat.id, "Игровой художник -- это специалист в индустрии видеоигр, который отвечает за создание визуальной составляющей игры. Его работа включает графический дизайн, иллюстрацию и визуальное искусство в контексте разработки компьютерных игр.")
+            bot.send_message(call.message.chat.id, '''В России начинающий художник может получать от 40 000 до 70 000 рублей в месяц, в то время как опытные специалисты с портфолио и участием в успешных проектах зарабатывают от 100 000 до 200 000 рублей и выше.
+''')
+
+        elif call.data == "button502":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start32()
+            )
+
+        elif call.data == 'button576':
+            bot.send_message(call.message.chat.id, "Микробиолог -- это специалист, который изучает микроорганизмы (бактерии, вирусы, грибы, водоросли и простейшие). Эти организмы настолько малы, что их невозможно увидеть невооружённым глазом, и микробиологи исследуют их структуру, жизнедеятельность, взаимодействие с окружающей средой и влияние на здоровье человека, животных и растений.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень (микробиологи без опыта) — от 60 000 до 80 000 рублей в месяц. 
+Средний уровень (опытные специалисты) — от 90 000 до 120 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше. 
+Эксперт (топовые микробиологи, работающие на высокобюджетных проектах) — от 130 000 до 200 000 рублей в месяц.''')
+        elif call.data == 'button577':
+            bot.send_message(call.message.chat.id, "Биохимик -- это  специалист, который изучает химические процессы, происходящие в живых организмах. Он исследует строение и функции клеток, белков, углеводов и других биомолекул, их взаимодействие и влияние на здоровье человека.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень — от 60 000 до 90 000 рублей в месяц — биохимики без опыта.
+Средний уровень — от 90 000 до 120 000 рублей в месяц — могут зарабатывать опытные специалисты, в крупных городах и на известных проектах эта сумма может быть значительно выше.
+Эксперт — от 120 000 до 150 000 рублей в месяц — могут получать топовые биохимики, работающие на высокобюджетных проектах.''')
+        elif call.data == 'button578':
+            bot.send_message(call.message.chat.id, "Ихтиолог -- это учёный, специалист по ихтиологии, изучающий строение, эволюционное развитие, формы жизнедеятельности и особенности размножения рыб.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень. Ихтиологи без опыта могут зарабатывать от 40 000 до 70 000 рублей в месяц.
+Средний уровень. Опытные специалисты могут получать от 70 000 до 100 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше.
+Эксперт. Топовые ихтиологи, работающие на высокобюджетных проектах, могут зарабатывать от 100 000 до 150 000 рублей в месяц.''')
+        elif call.data == 'button579':
+            bot.send_message(call.message.chat.id, "Агроном -- это  специалист в области агрономии, науки, изучающей все аспекты сельскохозяйственной деятельности и земледелия. Его основная задача — улучшение качества и увеличение объёма сельскохозяйственной продукции через оптимизацию процессов возделывания растений и ухода за ними.")
+            bot.send_message(call.message.chat.id, '''Начинающий агроном:
+фермы и агрохозяйства — от 20 000 до 30 000 рублей;
+Агроном со средним опытом (от 3 до 7 лет):
+фермы и агрохозяйства — от 35 000 до 60 000 рублей;
+Опытный агроном (более 7 лет опыта):
+фермы и агрохозяйства — от 60 000 до 120 000 рублей и выше в зависимости от размера хозяйства;
+''')
+        elif call.data == 'button580':
+            bot.send_message(call.message.chat.id, "Иммунолог -- это врач, специализирующийся на диагностике, лечении и профилактике заболеваний, связанных с нарушениями иммунной системы. Специалист изучает реакцию организма на вирусы.")
+            bot.send_message(call.message.chat.id, '''Частные клиники
+в регионах — от 100 000 до 180 000 рублей;
+в столичных городах — от 150 000 до 300 000 рублей.
+Государственные учреждения
+в регионах — от 45 000 до 65 000 рублей;
+в Москве и Санкт-Петербурге — от 80 000 до 110 000 рублей.''')
+        elif call.data == 'button581':
+            bot.send_message(call.message.chat.id, "Анатом -- это учёный, занимающийся анатомией, или вообще человек, изучающий строение живых организмов.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень — от 40 000 до 70 000 рублей в месяц (патологоанатомы без опыта).
+Средний уровень — от 70 000 до 100 000 рублей в месяц (опытные специалисты, в крупных городах и на известных проектах эта сумма может быть значительно выше).
+Эксперт — от 100 000 до 130 000 рублей в месяц (топовые патологоанатомы, работающие на высокобюджетных проектах).''')
+        elif call.data == 'button582':
+            bot.send_message(call.message.chat.id, "Вирусолог -- это учёный, который изучает вирусы, их структуру, функции, распространение и воздействие на организмы. Работа вирусолога лежит на стыке медицины, биологии и химии.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень (без опыта или до 2–3 лет опыта) — от 25 000 до 40 000 рублей в месяц.
+Средний уровень (3–7 лет опыта) — от 40 000 до 70 000 рублей в месяц.
+Высокий уровень (более 7 лет опыта и/или научная степень) — от 70 000 до 120 000 рублей и выше в месяц.
+Руководящие позиции или специалисты с узкой специализацией — от 100 000 до 200 000 рублей и выше в месяц.''')
+        elif call.data == 'button583':
+            bot.send_message(call.message.chat.id, "Орнитолог -- это учёный-зоолог или биолог, специализирующийся на изучении птиц. Он исследует особенности поведения, анатомии, размножения, миграций, а также роль птиц в экосистемах.")
+            bot.send_message(call.message.chat.id, '''Начинающий специалист — 35 000–50 000 рублей.
+Опытный орнитолог — 50 000–80 000 рублей.
+Ведущий исследователь или руководитель проектов — от 80 000 до 120 000 рублей.''')
+
+        elif call.data == "button506":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 Выберите интересующий вас раздел для ознакомления.",
+            reply_markup=start33()
+            )
+
+        elif call.data == 'button507':
+            bot.send_message(call.message.chat.id, "Финансист -- это специалист, который занимается управлением финансовыми потоками, инвестициями, бюджетированием и финансовым планированием. Он помогает организациям грамотно распоряжаться капиталом, что способствует успешному развитию бизнеса.")
+        elif call.data == 'button508':
+            bot.send_message(call.message.chat.id, "Медик -- это общее понятие, которое включает в себя всех специалистов, связанных с медициной.")
+        elif call.data == 'button509':
+            bot.send_message(call.message.chat.id, "Геодезия -- это наука об определении фигуры, размеров и гравитационного поля Земли, об измерениях на земной поверхности для отображения её на планах и картах, а также о решении практических задач.")
+        elif call.data == 'button510':
+            bot.send_message(call.message.chat.id, "Дизайнер -- это общее название профессии для специалистов, которые разрабатывают визуальные концепции, макеты и продукты в разных индустриях: от рекламы до моды.")
+        elif call.data == 'button511':
+            bot.send_message(call.message.chat.id, "Биолог -- это специалист, который изучает живые организмы, их строение, функции, эволюцию и взаимодействие с окружающей средой. Биологи проводят научные исследования на разных уровнях организации живой материи: от молекул и клеток до экосистем и биосферы в целом. ")
+
+        elif call.data == "button278":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="✏️ Выберете раздел, который вам нравится или нравился в школе.🌟 \n\n" \
+            "Если хотите подробнее узнать о каком-то предмете, выберите пункт Ознакомиться.",
+            reply_markup=start34()
+            )
+
+        elif call.data == "button584":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start35()
+            )
+        
+        elif call.data == 'button595':
+            bot.send_message(call.message.chat.id, "Архитектор -- это  специалист, который занимается проектированием зданий и других объектов. Он продумывает конструкцию и внешний вид здания, планировку и организацию внутреннего пространства.")
+            bot.send_message(call.message.chat.id, '''Начинающие специалисты (до 2 лет опыта) — 60 000–90 000 рублей.
+Профессионалы среднего уровня (3–5 лет) — 100 000–150 000 рублей.
+Опытные специалисты (более 5 лет) — от 150 000 рублей.
+Ведущие архитекторы и руководители проектов — от 200 000 рублей.''')
+        elif call.data == 'button596':
+            bot.send_message(call.message.chat.id, "Инженер-механик -- это специалист, который занимается проектированием, конструированием, тестированием и обслуживанием механических систем.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень. Инженеры-механики без опыта могут зарабатывать от 80 000 до 100 000 рублей в месяц.
+Средний уровень. Опытные специалисты могут получать от 120 000 до 150 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше.
+Эксперт. Топовые инженеры-механики, работающие на высокобюджетных проектах, могут зарабатывать от 180 000 до 250 000 рублей в месяц.''')
+        elif call.data == 'button597':
+            bot.send_message(call.message.chat.id, "Робототехник -- это специалист, который занимается проектированием, разработкой, программированием и обслуживанием роботов и автоматизированных систем.")
+            bot.send_message(call.message.chat.id, '''Начинающий работник (Junior) — от 80 до 120 тысяч рублей в месяц.
+Специалисты среднего уровня (Middle) с опытом работы от 3 до 5 лет — от 150 до 250 тысяч рублей.
+Ведущие инженеры-робототехники и руководители проектов — от 300 до 550 тысяч рублей в месяц.''')
+        elif call.data == 'button598':
+            bot.send_message(call.message.chat.id, "Машиностроитель -- это специалист, который проектирует, разрабатывает, производит и обслуживает машины и механизмы.")
+            bot.send_message(call.message.chat.id, '''Зарплата в российском машиностроении составила чуть более 106 тысяч рублей, а к третьему кварталу — почти 114 тысяч рублей. 
+''')
+        elif call.data == 'button599':
+            bot.send_message(call.message.chat.id, "Авиационный инженер -- это специалист, который занимается проектированием, разработкой, тестированием и обслуживанием авиационной техники, включая самолёты, вертолёты и другие летательные аппараты.")
+            bot.send_message(call.message.chat.id, '''Начинающий инженер (0–2 года опыта) — от 40 000 до 80 000 рублей в месяц.
+Инженер с опытом (2–5 лет опыта) — от 80 000 до 150 000 рублей в месяц.
+Опытный инженер (более 5 лет опыта) — от 150 000 рублей и выше, в зависимости от специализации, региона и работодателя.
+Ведущий авиационный инженер — от 150 000 до 250 000 рублей в месяц.
+Руководитель отдела — от 200 000 до 400 000 рублей в месяц.
+Заместитель директора — от 300 000 до 600 000 рублей в месяц и более, в зависимости от размера и статуса организации.''')
+        elif call.data == 'button600':
+            bot.send_message(call.message.chat.id, "Химический инженер -- это специалист в области химической технологии и инженерии. Он занимается проектированием, оптимизацией, контролем и разработкой химических процессов и оборудования для промышленного производства.")
+            bot.send_message(call.message.chat.id, '''Москва: минимальная зарплата — 90 000 рублей, максимальная — 250 000 рублей, средняя — 160 000 рублей.
+Санкт-Петербург: минимальная зарплата — 75 000 рублей, максимальная — 200 000 рублей, средняя — 125 000 рублей.
+Казань: минимальная зарплата — 70 000 рублей, максимальная — 180 000 рублей, средняя — 115 000 рублей.''')
+        elif call.data == 'button601':
+            bot.send_message(call.message.chat.id, "Инженер по материалам -- это специалист, занимающийся разработкой, тестированием и обработкой материалов для изучения их свойств и состава.")
+            bot.send_message(call.message.chat.id, '''30 000 рублей — стажер;
+50 000 рублей — младший специалист лаборатории материаловедения;
+90 000 рублей — инженер 1 категории;
+130 000 рублей — инженер по материаловедению;
+170 000 рублей — ведущий инженер по материаловедению.''')
+        elif call.data == 'button602':
+            bot.send_message(call.message.chat.id, "Инженер-эколог -- это специалист, который разрабатывает и внедряет мероприятия по охране окружающей среды на промышленных предприятиях и в организациях. ")
+            bot.send_message(call.message.chat.id, '''Начинающие специалисты (менее 2 лет опыта) — от 50 000 до 80 000 рублей в месяц;
+Специалисты с опытом (2–5 лет) — от 80 000 до 120 000 рублей в месяц;
+Опытные инженеры-экологи (более 5 лет) — от 120 000 и выше рублей в месяц.''')
+        elif call.data == 'button603':
+            bot.send_message(call.message.chat.id, "Инженер-исследователь -- это специалист, который занимается разработкой новых технических решений, проведением исследований и экспериментов для создания инновационных продуктов и технологий.")
+            bot.send_message(call.message.chat.id, '''Начинающий инженер-исследователь — от 60 000 до 85 000 рублей в месяц.
+Специалист с опытом 3–5 лет — от 90 000 до 140 000 рублей в месяц.
+Ведущий научный сотрудник — от 150 000 до 220 000 рублей в месяц.
+Руководитель R&D-подразделения — от 250 000 до 450 000 рублей в месяц.''')
+
+        elif call.data == "button585":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start36()
+            )
+
+        elif call.data == 'button604':
+            bot.send_message(call.message.chat.id, "Ботаник -- это учёный, который изучает растения и их взаимодействие с окружающей средой.")
+            bot.send_message(call.message.chat.id, '''Начинающий специалист (студент-ботаник или стажер) — 15 000–30 000 рублей.
+Помощник исследователя в ботаническом саду или гербарии — 25 000–40 000 рублей.
+Научный сотрудник-ботаник — 35 000–60 000 рублей, в зависимости от опыта и степени.
+Старший научный сотрудник, куратор гербария или коллекции — 50 000–80 000 рублей.
+Профессор ботаники — 60 000–120 000 рублей или даже выше, в зависимости от учебного заведения и наличия научных публикаций. ''')
+        elif call.data == 'button605':
+            bot.send_message(call.message.chat.id, "Зоолог -- это учёный-биолог, который изучает животных, их поведение, физиологию, классификацию и взаимодействие с окружающей средой.")
+            bot.send_message(call.message.chat.id, '''Начинающий зоолог, аспирант или младший научный сотрудник — 20 000–40 000 рублей.
+Зоолог со средним стажем или научный сотрудник — 40 000–70 000 рублей.
+Зоолог с большим опытом или ведущий научный сотрудник — 70 000–100 000 рублей и выше.
+''')
+        elif call.data == 'button606':
+            bot.send_message(call.message.chat.id, "Фермер -- это предприниматель, владеющий землёй или арендующий её и занимающийся на ней сельским хозяйством.")
+            bot.send_message(call.message.chat.id, '''Зарплата фермера в России может составлять от 50 000 до 200 000 рублей, в Москве — от 60 000 до 125 000 рублей.
+''')
+        elif call.data == 'button607':
+            bot.send_message(call.message.chat.id, "Микробиолог -- это  учёный-биолог, который специализируется на изучении микроорганизмов (микробов), невидимых невооружённым глазом. К объектам исследования относятся бактерии, вирусы, археи, микроскопические грибы и водоросли, простейшие.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень (микробиологи без опыта) — от 60 000 до 80 000 рублей в месяц. 
+Средний уровень (опытные специалисты) — от 90 000 до 120 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше. 
+Эксперт (топовые микробиологи, работающие на высокобюджетных проектах) — от 130 000 до 200 000 рублей в месяц.
+''')
+        elif call.data == 'button608':
+            bot.send_message(call.message.chat.id, "Биолог-исследователь -- это специалист, который занимается научными исследованиями в области биологии, изучает живые организмы, их взаимодействие с окружающей средой и внутренние процессы.")
+            bot.send_message(call.message.chat.id, '''Начальная позиция (лаборант, младший научный сотрудник) — 35 000–55 000 рублей в месяц.
+Опытный специалист (научный сотрудник, кандидат наук) — 70 000–120 000 рублей в месяц.
+Ведущий исследователь (руководитель группы, доктор наук) — от 130 000 рублей и выше.''')
+        elif call.data == 'button609':
+            bot.send_message(call.message.chat.id, "Паразитолог -- это специалист, который занимается изучением, диагностикой, лечением и профилактикой заболеваний, вызываемых паразитами.")
+            bot.send_message(call.message.chat.id, '''Москва: 80 000–140 000 рублей.
+Санкт-Петербург: 70 000–120 000 рублей.
+Екатеринбург: 60 000–100 000 рублей.
+Новосибирск: 55 000–95 000 рублей.''')
+
+        elif call.data == "button586":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start37()
+            )
+
+        elif call.data == 'button610':
+            bot.send_message(call.message.chat.id, "Финансовый аналитик -- это специалист, который анализирует финансовую информацию для оценки текущего состояния и прогнозирования будущих финансовых результатов бизнеса. Его задача — помочь компании принимать обоснованные решения, оптимизировать расходы и увеличить прибыль. ")
+            bot.send_message(call.message.chat.id, '''Начинающие специалисты (опыт до 1–2 лет) — в среднем 70 000–100 000 рублей в месяц.
+Специалисты среднего звена (опыт 2–5 лет) — в среднем 120 000–200 000 рублей в месяц.
+Опытные аналитики (опыт более 5 лет) — от 200 000 до 350 000 рублей в месяц.
+Руководители финансовой аналитики — от 350 000 до 700 000 рублей и выше.''')
+        elif call.data == 'button611':
+            bot.send_message(call.message.chat.id, "Менеджер по продажам -- это специалист, который отвечает за реализацию продуктов или услуг компании клиентам. Его задача — увеличивать продажи, находить новых клиентов и поддерживать лояльность постоянных покупателей.")
+            bot.send_message(call.message.chat.id, '''Начинающий менеджер — от 60 000 до 90 000 рублей.
+Опытный менеджер — от 150 000 до 300 000 рублей.
+Руководители отделов продаж в крупных компаниях — от 350 000 до 700 000 рублей и выше.''')
+        elif call.data == 'button612':
+            bot.send_message(call.message.chat.id, "Маркетолог -- это специалист, который выстраивает стратегию продвижения продуктов и услуг для увеличения продаж и повышения прибыли бизнеса. Его задача — создать спрос на продукт и помочь бизнесу увеличить прибыль. ")
+            bot.send_message(call.message.chat.id, '''Junior — 61 708 рублей в месяц;
+Middle — 114 213 рублей в месяц;
+Senior — 138 745 рублей в месяц;
+Lead — 174 029 рублей в месяц.''')
+        elif call.data == 'button613':
+            bot.send_message(call.message.chat.id, "Акционер -- это владелец акций, участник акционерного общества (АО). Акционерами могут быть как физические, так и юридические лица. ")
+            bot.send_message(call.message.chat.id, '''Акционер зарабатывает деньги на акциях двумя основными способами: приростом капитала и текущим доходом.
+Прирост капитала — это изменение рыночной цены акции с момента её приобретения до даты продажи (или текущей цены, если она всё ещё находится в собственности).
+Текущий доход — это дивиденды, выплачиваемые компанией из её прибыли, пока инвестор всё ещё владеет акциями.''')
+        elif call.data == 'button614':
+            bot.send_message(call.message.chat.id, "Страховой агент -- это посредник между страховой компанией и клиентом, специалист, который помогает подобрать подходящие страховые продукты.")
+            bot.send_message(call.message.chat.id, '''Москва — 80–200 тыс. рублей.
+Санкт-Петербург — 70–180 тыс. рублей.
+Новосибирск — 50–150 тыс. рублей.
+Екатеринбург — 45–140 тыс. рублей.''')
+        elif call.data == 'button615':
+            bot.send_message(call.message.chat.id, "Частный нотариус -- это нотариус, который занимается частной практикой. Он имеет собственную контору, сам нанимает сотрудников и управляет бюджетом.")
+            bot.send_message(call.message.chat.id, '''Москва и Санкт-Петербург — 350 000 рублей (нижняя граница — 200 000 рублей, верхняя — 500 000 рублей и более).
+Города-миллионники — 250 000 рублей (нижняя граница — 150 000 рублей, верхняя — 400 000 рублей).
+Региональные центры — 180 000 рублей (нижняя граница — 120 000 рублей, верхняя — 300 000 рублей).''')
+
+        elif call.data == "button587":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start38()
+            )
+
+        elif call.data == 'button616':
+            bot.send_message(call.message.chat.id, "Программист -- это специалист, который занимается разработкой программного обеспечения и приложений. Он создаёт компьютерные программы, которые могут выполнять различные задачи, начиная от простых утилит до сложных систем управления.")
+            bot.send_message(call.message.chat.id, '''Стажёры (уровень «интерн») — от 47 до 85 тыс. руб. в месяц, в среднем — 68 тыс. руб..
+Начинающие специалисты («джуны») — от 60 до 187 тыс. руб., чаще всего — около 109 тыс. руб. в месяц.
+Обладатели грейда «миддл» — от 110 до 310 тыс. руб. ежемесячно, как правило, их зарплата — 200 тыс. руб..
+Опытные специалисты («сеньоры») — минимум 180 тыс. руб., верхний потолок — порядка 420 тыс. руб. в месяц, в среднем — 310 тыс. руб. в месяц.''')
+        elif call.data == 'button617':
+            bot.send_message(call.message.chat.id, "Веб-разработчик -- это специалист, который разрабатывает и поддерживает интернет-сайты и веб-приложения, работающие через браузер. Его задача — создать удобный и стабильный веб-продукт: от блогов и интернет-магазинов до банковских сервисов.")
+            bot.send_message(call.message.chat.id, '''Junior — в среднем 81 542 рубля в месяц.
+Middle — 144 313 рублей в месяц.
+Senior — 186 177 рублей в месяц.
+Lead — 221 111 рублей в месяц.''')
+        elif call.data == 'button618':
+            bot.send_message(call.message.chat.id, "Аналитик данных -- это специалист, который собирает, обрабатывает и анализирует информацию для принятия обоснованных решений в бизнесе. Главная цель — преобразовать «сырые» данные в понятную информацию, которая поможет бизнесу стать эффективнее, снизить риски и найти новые точки роста.")
+            bot.send_message(call.message.chat.id, '''Junior (начинающий): 100 тыс. рублей в месяц. Это специалисты с опытом до 1–2 лет, владеющие базовыми инструментами: Excel, SQL, иногда Python.
+Middle (средний): 176 тыс. рублей в месяц. Опыт 2–4 года, уверенное владение SQL, Python/R, BI-инструментами и умение работать с большими данными.
+Senior (старший): 280 тыс. рублей в месяц. Опыт от 4–5 лет, глубокие знания аналитики, управление проектами и способность решать сложные бизнес-задачи.''')
+        elif call.data == 'button619':
+            bot.send_message(call.message.chat.id, "Тестировщик ПО -- это специалист, который проверяет программное обеспечение (приложения, сайты, веб-сервисы) на наличие ошибок и дефектов. Его задача — убедиться, что программа работает так, как задумано, без сбоев и неожиданных проблем. ")
+            bot.send_message(call.message.chat.id, '''Junior (джуниор) — 62 444 рубля;
+Middle — 159 412 рублей;
+Senior — 229 425 рублей;
+Lead — 242 500 рублей.''')
+        elif call.data == 'button620':
+            bot.send_message(call.message.chat.id, "DevOps инженер -- это специалист, который объединяет процессы разработки и эксплуатации программного обеспечения, автоматизирует и оптимизирует их, чтобы ускорить выпуск продукта при минимальных затратах и рисках.")
+            bot.send_message(call.message.chat.id, '''Junior — 114 581 рубль в месяц.
+Middle — 226 893 рубля в месяц.
+Senior — 301 887 рублей в месяц.
+Lead — 454 736 рублей в месяц.''')
+        elif call.data == 'button621':
+            bot.send_message(call.message.chat.id, "Админ баз данных -- это специалист, отвечающий за управление и обслуживание баз данных в организации. ")
+            bot.send_message(call.message.chat.id, '''Junior DBA (рутина под присмотром, бэкапы, простые миграции, базовый мониторинг) — 80 000–150 000 рублей в месяц.
+Middle DBA (производительность, репликация, аварийное восстановление, участие в проектировании) — 160 000–260 000 рублей в месяц.
+Senior DBA (архитектура, масштабирование, безопасность, наставничество, ответственность за SLA) — 270 000–420 000+ рублей в месяц.''')
+        elif call.data == 'button622':
+            bot.send_message(call.message.chat.id, "Системный админ -- это специалист, отвечающий за бесперебойную работу IT-инфраструктуры компании.")
+            bot.send_message(call.message.chat.id, '''Junior — 75 452 рубля;
+Middle — 147 441 рубль;
+Senior — 198 476 рублей;
+Lead — 368 895 рублей.''')
+        elif call.data == 'button623':
+            bot.send_message(call.message.chat.id, "Бизнес-аналитик -- это специалист, который помогает компаниям находить решения для достижения их целей, объединяя потребности бизнеса с возможностями технологий.")
+            bot.send_message(call.message.chat.id, '''Junior — 73 333 рубля;
+Middle — 196 500 рублей;
+Senior — 237 308 рублей;
+Lead — 330 000 рублей.''')
+        elif call.data == 'button624':
+            bot.send_message(call.message.chat.id, "Графический дизайнер -- это специалист, который создаёт визуальные образы для передачи информации, идей и эмоций. Он работает со всем, что можно передать в виде образа: изображениями, цветом, шрифтами, фотографиями и другими элементами.")
+            bot.send_message(call.message.chat.id, '''Junior (0–1 год) — 25 000–45 000 рублей;
+Middle (1–3 года) — 45 000–90 000 рублей;
+Senior (3–5 лет) — 80 000–150 000 рублей;
+Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и выше.''')
+        elif call.data == 'button625':
+            bot.send_message(call.message.chat.id, "Преподаватель информатики -- это педагог, который преподает информатику и компьютерные науки в школах. Он обучает учащихся навыкам работы с компьютерами, основам программирования, цифровой грамотности и использованию различных технологий в учебном процессе.")
+            bot.send_message(call.message.chat.id, '''Средняя зарплата преподавателя информатики в России —  38 000 рублей. Чаще всего зарплаты находятся в диапазоне от 30 000 до 45 000 рублей. Минимальная зафиксированная зарплата —  24 000 рублей, максимальная —  100 000 рублей.''')
+
+        elif call.data == "button434":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start39()
+            )
+
+        elif call.data == 'button478':
+            bot.send_message(call.message.chat.id, "Эколог -- это специалист, изучающий взаимоотношения живых организмов друг с другом и с окружающей средой, анализирующий и оценивающий воздействие человека на природу, а также разрабатывающий мероприятия по ее защите и охране.")
+            bot.send_message(call.message.chat.id, '''Средняя зарплата эколога в России составляет около 60–70 тысяч рублей в месяц, но диапазон может варьироваться от 40 тысяч рублей для начинающих специалистов до более 120 тысяч для ведущих или главных экологов.
+''')
+        elif call.data == 'button479':
+            bot.send_message(call.message.chat.id, "Биолог -- это специалист, который изучает живые организмы, их строение, функции, развитие, происхождение и взаимодействие с окружающей средой, от микроорганизмов до человека.")
+            bot.send_message(call.message.chat.id, '''Примеры зарплат в зависимости от опыта и сектора:
+Начинающий специалист (0-2 года опыта): от 30 000 до 70 000 рублей в месяц. 
+Специалист (3-5 лет опыта): от 70 000 до 120 000 рублей. 
+Опытный специалист (6-10 лет опыта): от 120 000 до 180 000 рублей. 
+Эксперт (10+ лет опыта): от 180 000 рублей и выше.''')
+        elif call.data == 'button480':
+            bot.send_message(call.message.chat.id, "Гидролог -- это  специалист, который изучает водные ресурсы, их распределение, движение и качество в природных и антропогенных условиях. Он анализирует процессы в реках, озёрах, грунтовых водах и других водоёмах.")
+            bot.send_message(call.message.chat.id, '''Зарплата гидролога в России может различаться в зависимости от уровня опыта, должности, образования, региона страны и типа работодателя:
+Начинающий гидролог — зарплата может варьироваться от 30 000 до 60 000 рублей в месяц в зависимости от региона.
+Гидролог со средним опытом — средний уровень зарплаты может составлять от 50 000 до 90 000 рублей в месяц.
+Старший гидролог или руководящая должность — зарплата может достигать от 80 000 до 150 000 рублей и выше в зависимости от обязанностей и региона.
+Заведующий отделом, руководитель проекта — зарплата может варьироваться от 100 000 рублей до 200 000 рублей и выше в зависимости от масштаба организации и региона.''')
+        elif call.data == 'button481':
+            bot.send_message(call.message.chat.id, "Климатолог -- это специалист, который изучает климат и климатические явления на Земле. Он анализирует климатические данные, проводит исследования изменений климата в разные исторические периоды, а также прогнозирует возможные изменения в будущем.")
+            bot.send_message(call.message.chat.id, '''Заработок климатолога в России зависит от уровня квалификации, опыта работы, региона и места работы специалиста:
+Начальный уровень (0–2 года опыта). Зарплата на начальном уровне обычно составляет от 30 000 до 50 000 рублей в месяц в меньших городах и регионах, и от 50 000 до 80 000 рублей в крупных городах.
+Средний уровень (2–5 лет опыта). С опытом работы от 2 до 5 лет зарплата может составлять от 50 000 до 100 000 рублей в месяц в меньших городах и регионах, и от 80 000 до 150 000 рублей в крупных городах.
+Опытные специалисты (более 5 лет опыта). Климатологи с опытом более 5 лет могут ожидать заработную плату от 80 000 до 150 000 рублей и выше в меньших городах и регионах, и от 120 000 до 200 000 рублей и выше в крупных городах.''')
+        elif call.data == 'button482':
+            bot.send_message(call.message.chat.id, "Почвовед -- это специалист, который занимается исследованием почвы как природного объекта. Его основная задача — анализ состава, структуры и свойств почв, чтобы понять их влияние на растения и экосистемы. ")
+            bot.send_message(call.message.chat.id, '''Заработная плата почвоведа варьируется в зависимости от региона и уровня квалификации:
+Начинающий специалист: в крупных городах — от 25 000 до 45 000 рублей в месяц, в больших городах и областных центрах — от 20 000 до 40 000 рублей в месяц, в малых городах и сельской местности — от 15 000 до 30 000 рублей в месяц.
+Специалист со средним опытом работы: в крупных городах — от 40 000 до 70 000 рублей в месяц, в больших городах и областных центрах — от 30 000 до 60 000 рублей в месяц, в малых городах и сельской местности — от 25 000 до 50 000 рублей в месяц.
+Опытный специалист: в крупных городах — от 60 000 до 100 000 рублей в месяц и выше, в больших городах и областных центрах — от 50 000 до 80 000 рублей в месяц и выше, в малых городах и сельской местности — от 40 000 до 70 000 рублей в месяц и выше.''')
+        elif call.data == 'button483':
+            bot.send_message(call.message.chat.id, "Агроэколог -- это специалист, который занимается созданием и внедрением экологически устойчивых методов сельского хозяйства. Он анализирует влияние агротехники на землю, водные ресурсы, растения и экосистемы в целом.")
+            bot.send_message(call.message.chat.id, '''Зарплата агроэколога в России  — 30 000–55 000 рублей. 
+''')
+        elif call.data == 'button484':
+            bot.send_message(call.message.chat.id, "Географ -- это  специалист, который изучает землю и происходящие в ней процессы, природные ресурсы, климат, население, экономику, а также взаимодействие между человеком и окружающей средой.")
+            bot.send_message(call.message.chat.id, '''Климатолог — 35–70 тыс. руб.
+Эколог (геоэколог) — 40–100 тыс. руб.
+Геодезисты — 50–120 тыс. руб. ежемесячно.
+Океанографы — до 200 тыс. руб. в мес.
+Специалисты в сфере общественной (гуманитарной) географии — 20–100 тыс. руб.
+Преподаватели географии в школе — от 40 тыс. руб.''')
+        elif call.data == 'button485':
+            bot.send_message(call.message.chat.id, "Зелёный инженер -- это специалист, который занимается экологическим (зелёным) инжинирингом. Это интегрированный подход к проектированию, модернизации, ремонту и эксплуатации различных объектов — промышленных и сельскохозяйственных предприятий, жилых зданий, городской инфраструктуры.")
+            bot.send_message(call.message.chat.id, '''Среднем такой специалист получает 55 000–100 000 рублей в месяц, в крупных компаниях — до 130 000 рублей, стартовая зарплата — от 40 000 рублей.
+''')
+
+        elif call.data == "button589":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 Выберите интересующий вас предмет для ознакомления.",
+            reply_markup=start40()
+            )
+
+        elif call.data == 'button590':
+            bot.send_message(call.message.chat.id, "Инженерия -- это область технической деятельности, направленная на практическое применение научных, экономических, социальных и практических знаний для создания искусственных объектов — сооружений, устройств, механизмов, машин.")
+        elif call.data == 'button591':
+            bot.send_message(call.message.chat.id, "Биология -- это наука о живых существах и их взаимодействии со средой обитания.")
+        elif call.data == 'button592':
+            bot.send_message(call.message.chat.id, "Экономика -- это хозяйственная деятельность, а также совокупность общественных отношений, которые складываются в системе производства, распределения, обмена и потребления товаров и услуг.")
+        elif call.data == 'button593':
+            bot.send_message(call.message.chat.id, "Информатика -- это  — наука о методах и процессах сбора, хранения, обработки, передачи, анализа и оценки информации с применением компьютерных технологий.")
+        elif call.data == 'button594':
+            bot.send_message(call.message.chat.id, "Экология -- это естественная наука (раздел биологии) о взаимодействиях живых организмов между собой и с их средой обитания. Также экология исследует организацию и функционирование биосистем различных уровней: от популяций и сообществ до экосистем и биосферы. ")
+
+        elif call.data == "button589":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="✏️ Выберете раздел, который вам нравится или нравился в школе.🌟 \n\n" \
+            "Если хотите подробнее узнать о каком-то предмете, выберите пункт Ознакомиться.",
+            reply_markup=start41()
+            )
+
+        elif call.data == "button595":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start42()
+            )
+
+        elif call.data == 'button626':
+            bot.send_message(call.message.chat.id, "Инженер-механик -- это специалист, который занимается проектированием, конструированием, тестированием и обслуживанием механических систем.")
+            bot.send_message(call.message.chat.id, '''Начальный уровень. Инженеры-механики без опыта могут зарабатывать от 80 000 до 100 000 рублей в месяц.
+Средний уровень. Опытные специалисты могут получать от 120 000 до 150 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше.
+Эксперт. Топовые инженеры-механики, работающие на высокобюджетных проектах, могут зарабатывать от 180 000 до 250 000 рублей в месяц.''')
+        elif call.data == 'button627':
+            bot.send_message(call.message.chat.id, "Мастер ремонта техники -- это профессионал, который занимается диагностикой, ремонтом и обслуживанием различных видов технического оборудования и устройств.")
+            bot.send_message(call.message.chat.id, '''Средняя зарплата Мастера по ремонту бытовой техники ‒ 81 215 рублей.''')
+        elif call.data == 'button628':
+            bot.send_message(call.message.chat.id, "Автомеханик -- это специалист, который занимается диагностикой, техническим обслуживанием и ремонтом автомобилей.")
+            bot.send_message(call.message.chat.id, '''Заработная плата автомеханика может отличаться в зависимости от города:
+Краснодар — 103 000 рублей;
+Москва — 94 000 рублей;
+Ростов-на-Дону — 90 000 рублей;
+Екатеринбург — 70 000 рублей.''')
+        elif call.data == 'button629':
+            bot.send_message(call.message.chat.id, "Авиатехник -- это специалист, который занимается техническим обслуживанием, ремонтом и проверкой авиационной техники и оборудования.")
+            bot.send_message(call.message.chat.id, '''Москва и Санкт-Петербург:
+начинающий специалист — от 60 000 до 80 000 рублей в месяц;
+с опытом работы — от 80 000 до 120 000 рублей в месяц;
+высококвалифицированный специалист — от 120 000 до 200 000 рублей в месяц и выше.
+Крупные города (Новосибирск, Екатеринбург, Казань и т. д.):
+начинающий специалист — от 50 000 до 70 000 рублей в месяц;
+с опытом работы — от 70 000 до 100 000 рублей в месяц;
+высококвалифицированный специалист — от 100 000 до 150 000 рублей в месяц.''')
+        elif call.data == 'button630':
+            bot.send_message(call.message.chat.id, "Судовой механик -- это  специалист, который отвечает за техническое обслуживание, ремонт и обеспечение надёжной работы механических и электрических систем, двигателей и другого технического оборудования на морских судах.")
+            bot.send_message(call.message.chat.id, '''Зарплата судового механика в некоторых организациях России:
+ПАО «СЛАВЯНСКИЙ СРЗ» (Приморский край) — 50 000–70 000 рублей;
+ФГУП «РОСМОРПОРТ» (Краснодарский край) — 52 350–79 000 рублей;
+ООО «ТНХ БУНКЕР» (Республика Татарстан) — 80 460–120 000 рублей;
+ПАО «ИРП» (Омская область) — 170 000–200 000 рублей;
+ПАО «ММТП» (Магаданская область) — 70 000–120 000 рублей.''')
+        elif call.data == 'button631':
+            bot.send_message(call.message.chat.id, "Машинист -- это специалист, который отвечает за управление, обслуживание и эксплуатацию различных машин, аппаратов или транспортных средств. ")
+            bot.send_message(call.message.chat.id, '''Начальный уровень: машинисты поездов без опыта — от 80 000 до 100 000 рублей в месяц.
+Средний уровень: опытные специалисты — от 100 000 до 120 000 рублей в месяц. В крупных городах и на известных проектах эта сумма может быть значительно выше.
+Эксперт: топовые машинисты поездов, работающие на высокобюджетных проектах — от 120 000 до 150 000 рублей в месяц.''')
+        elif call.data == 'button632':
+            bot.send_message(call.message.chat.id, "Крановщик -- это специалист, который управляет грузоподъёмными кранами различных типов для перемещения и монтажа грузов. Работает на строительных площадках, промышленных предприятиях и других объектах")
+            bot.send_message(call.message.chat.id, '''Автомобильного крана — 95 000–148 000 рублей.
+Башенного крана — 80 000–106 000 рублей.
+Крана-манипулятора — 60 000–85 000 рублей.
+Мостового крана — 40 000–95 000 рублей.
+Кран-балки — 35 000–55 000 рублей.
+Портального крана — 50 000–70 000 рублей.
+Железнодорожного крана — 45 000–80 000 рублей.
+Плавучего крана — 80 000–150 000 рублей.''')
+        elif call.data == 'button633':
+            bot.send_message(call.message.chat.id, "Технолог -- это специалист, который использует научные знания, технические процессы и инженерные методы для разработки и внедрения технологических процессов в различных отраслях промышленности.")
+            bot.send_message(call.message.chat.id, '''Начинающий технолог (до 2 лет опыта) — примерно от 25 000 до 45 000 рублей в месяц.
+Технолог со средним опытом работы (2–5 лет) — примерно от 40 000 до 70 000 рублей в месяц.
+Опытный технолог (5–10 лет и более) — от 60 000 до 100 000 рублей и выше в месяц.
+Специалист с высоким опытом и управленческими обязанностями — от 100 000 рублей и выше в месяц.''')
+
+        elif call.data == "button634":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="👉 Выберите профессию, которая вдохновляет вас больше всего ⭐",
+            reply_markup=start43()
+            )
+
+        elif call.data == 'button634':
+            bot.send_message(call.message.chat.id, "Инженер-электрик -- это  специалист, который занимается проектированием, разработкой, тестированием, установкой, обслуживанием и ремонтом электрических систем, оборудования и компонентов.")
+            bot.send_message(call.message.chat.id, '''В Москве и крупных городах — от 70 000 до 150 000 рублей в месяц для специалистов среднего уровня.
+В регионах с развитой промышленностью — от 50 000 до 100 000 рублей в месяц.
+Старшие инженеры и руководители проектов могут рассчитывать на доход свыше 200 000 рублей при условии наличия опыта и дополнительных квалификаций.''')
+        elif call.data == 'button635':
+            bot.send_message(call.message.chat.id, "Техник-электрик -- это специалист, который занимается установкой, обслуживанием, ремонтом и проверкой электрических систем и оборудования.")
+            bot.send_message(call.message.chat.id, '''Техник-электрик 2–3-й разряд (средний уровень опыта) —  от 30 000 до 50 000 рублей в месяц.
+Техник-электрик 4–5-й разряд (большой опыт и квалификация) —  от 50 000 до 80 000 рублей в месяц.
+Техник-электрик 6-го разряда —  от 60 000 до 100 000 и более рублей в месяц.
+Электрик на строительных объектах —  от 35 000 до 60 000 рублей в месяц.
+Техник-электрик в энергетической отрасли —  от 45 000 до 80 000 рублей в месяц.''')
+        elif call.data == 'button636':
+            bot.send_message(call.message.chat.id, "Электромонтажник -- это специалист, который занимается установкой, подключением, тестированием и обслуживанием электрических систем и оборудования.")
+            bot.send_message(call.message.chat.id, '''Средняя заработная плата электромонтажника в Самаре — 127 716 рублей, медианная — 131 340 рублей, модальная — 150 000 рублей.
+ООО «АЗОТРЕМСТРОЙ» (Самарская область) — 85 000–116 250 рублей;
+КЦ «Мир Кадров» (Самара) — 100 000–150 000 рублей (вахтовый метод работы, опыт не требуется); 
+«Ленгазспецстрой» (Самара) — 150 000–160 000 рублей в месяц (вахта).''')
+        elif call.data == 'button637':
+            bot.send_message(call.message.chat.id, "Специалист по энергетике -- это профессионал, который обеспечивает бесперебойную работу систем энергоснабжения на производстве, в городском хозяйстве и других сферах деятельности человека. ")
+            bot.send_message(call.message.chat.id, '''Младший инженер-энергетик (0–2 года) — в Москве 60 000–85 000 рублей, в регионах — 40 000–60 000 рублей.
+Инженер-энергетик (2–5 лет) — в Москве 85 000–130 000 рублей, в регионах — 60 000–90 000 рублей.
+Старший/ведущий инженер (5–8 лет) — в Москве 130 000–180 000 рублей, в регионах — 90 000–130 000 рублей.
+Главный энергетик участка (8–12 лет) — в Москве 180 000–250 000 рублей, в регионах — 130 000–180 000 рублей.
+Главный энергетик предприятия (12+ лет) — в Москве 250 000–400 000 рублей, в регионах — 180 000–300 000 рублей.''')
+        elif call.data == 'button638':
+            bot.send_message(call.message.chat.id, "Начальник отдела главного энергетика -- это руководитель самостоятельного структурного подразделения организации, предприятия или объединения.")
+            bot.send_message(call.message.chat.id, '''Главного энергетика в Самаре составила 102 167 рублей, модальная (наиболее часто встречающаяся) — 99 000 рублей.
+ООО «АНКОР», руководство отделом главного энергетика — 99 000 рублей, полный рабочий день, опыт от 3 лет.
+«ОРТО», главный энергетик — от 115 000 рублей в месяц, до вычета налогов, выплаты два раза в месяц, опыт 1–3 года.''')
+        elif call.data == 'button639':
+            bot.send_message(call.message.chat.id, "Электромеханик -- это специалист, который занимается установкой, обслуживанием, диагностикой, ремонтом и проектированием электромеханического оборудования.")
+            bot.send_message(call.message.chat.id, '''Зарплата электромеханика в России находилась в диапазоне 50 000–157 000 рублей, в Москве — 70 000–170 000 рублей.''')
+        elif call.data == 'button640':
+            bot.send_message(call.message.chat.id, "Проектировщик электросистем -- это специалист, который разрабатывает и создаёт электрические сети для обеспечения энергией зданий, промышленных объектов и целых городов.")
+            bot.send_message(call.message.chat.id, '''Минимальный уровень — 120 000–150 000 рублей;
+средний уровень — 150 000–200 000 рублей;
+повышенный уровень — 200 000–350 000 рублей.''')
+        
 bot.infinity_polling()
