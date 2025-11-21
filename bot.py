@@ -126,7 +126,6 @@ def job_search_bot(message):
 
 @bot.message_handler(commands=["job_deepsearch"])
 def start(message):
-
     keyboard = types.InlineKeyboardMarkup(row_width=2)
     button204 = types.InlineKeyboardButton(text="📚 Математические предметы", callback_data='button204')
     button205 = types.InlineKeyboardButton(text="🎨 Гуманитарные науки", callback_data='button205')
@@ -939,7 +938,7 @@ def start34():
 
 def start35():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button595 = types.InlineKeyboardButton(text="Архитектор", callback_data='button595')
     button596 = types.InlineKeyboardButton(text="Инженер-механик", callback_data='button596')
     button597 = types.InlineKeyboardButton(text="Робототехник", callback_data='button597')
@@ -965,7 +964,7 @@ def start35():
 
 def start36():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button604 = types.InlineKeyboardButton(text="Ботаник", callback_data='button604')
     button605 = types.InlineKeyboardButton(text="Зоолог", callback_data='button605')
     button606 = types.InlineKeyboardButton(text="Фермер ", callback_data='button606')
@@ -985,7 +984,7 @@ def start36():
 
 def start37():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button610 = types.InlineKeyboardButton(text="Финансовый аналитик", callback_data='button610')
     button611 = types.InlineKeyboardButton(text="Менеджер по продажам", callback_data='button611')
     button612 = types.InlineKeyboardButton(text="Маркетолог", callback_data='button612')
@@ -1005,7 +1004,7 @@ def start37():
 
 def start38():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button616 = types.InlineKeyboardButton(text="Программист", callback_data='button616')
     button617 = types.InlineKeyboardButton(text="Веб-разработчик", callback_data='button617')
     button618 = types.InlineKeyboardButton(text="Аналитик данных", callback_data='butto6186')
@@ -1033,7 +1032,7 @@ def start38():
 
 def start39():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
     button626 = types.InlineKeyboardButton(text="Эколог", callback_data='button626')
     button627 = types.InlineKeyboardButton(text="Биолог", callback_data='button627')
     button628 = types.InlineKeyboardButton(text="Гидролог", callback_data='button628')
@@ -1055,91 +1054,114 @@ def start39():
 
 def start40():
     global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
-    button590 = types.InlineKeyboardButton(text="Инженерия", callback_data='button590')
-    button591 = types.InlineKeyboardButton(text="Биология", callback_data='button591')
-    button592 = types.InlineKeyboardButton(text="Экономика", callback_data='button592')
-    button593 = types.InlineKeyboardButton(text="Информатика", callback_data='button593')
-    button594 = types.InlineKeyboardButton(text="Экология", callback_data='button594')
-    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
-    keyboard.row(button590)
-    keyboard.row(button591)
-    keyboard.row(button592)
-    keyboard.row(button593)
-    keyboard.row(button594)
-    keyboard.row(bt21)
-    last_keyboard = keyboard
-    return keyboard
-
-def start41():
-    global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
-    button595 = types.InlineKeyboardButton(text="Механика ", callback_data='button595')
-    button596 = types.InlineKeyboardButton(text="Электротехника ", callback_data='button596')
-    button597 = types.InlineKeyboardButton(text="ИИ", callback_data='button597')
-    button598 = types.InlineKeyboardButton(text="Робототехника", callback_data='button598')
-    button599 = types.InlineKeyboardButton(text="3D-графика", callback_data='button599')
-    button600 = types.InlineKeyboardButton(text="Криптография ", callback_data='button600')
-    button601 = types.InlineKeyboardButton(text="Геодезия", callback_data='button601')
-    button602 = types.InlineKeyboardButton(text="Ознакомиться🔎", callback_data='button602')
-    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
-    keyboard.row(button595)
-    keyboard.row(button596)
-    keyboard.row(button597)
-    keyboard.row(button598)
-    keyboard.row(button599)
-    keyboard.row(button600)
-    keyboard.row(button601)
-    keyboard.row(button602)
-    keyboard.row(bt21)
-    last_keyboard = keyboard
-    return keyboard
-
-def start42():
-    global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
-    button626 = types.InlineKeyboardButton(text="Инженер-механик", callback_data='button626')
-    button627 = types.InlineKeyboardButton(text="Мастер ремонта техники", callback_data='button627')
-    button628 = types.InlineKeyboardButton(text="Автомеханик", callback_data='button628')
-    button629 = types.InlineKeyboardButton(text="Авиатехник", callback_data='button629')
-    button630 = types.InlineKeyboardButton(text="Судовой механик", callback_data='button630')
-    button631 = types.InlineKeyboardButton(text="Машинист", callback_data='button631')
-    button632 = types.InlineKeyboardButton(text="Крановщик", callback_data='button632')
-    button633 = types.InlineKeyboardButton(text="Технолог", callback_data='button633')
-    keyboard.row(button626)
-    keyboard.row(button627)
-    keyboard.row(button628)
-    keyboard.row(button629)
-    keyboard.row(button630)
-    keyboard.row(button631)
-    keyboard.row(button632)
-    keyboard.row(button633)
-    last_keyboard = keyboard
-    return keyboard
-
-def start43():
-    global last_keyboard
-    keyboard = types.InlineKeyboardMarkup()
-    button634 = types.InlineKeyboardButton(text="Инженер-электрик", callback_data='button634')
-    button635 = types.InlineKeyboardButton(text="Техник-электрик", callback_data='button635')
-    button636 = types.InlineKeyboardButton(text="Электромонтажник", callback_data='button636')
-    button637 = types.InlineKeyboardButton(text="Специалист по энергетике", callback_data='button637')
-    button638 = types.InlineKeyboardButton(text="НГЭ", callback_data='button638')
-    button639 = types.InlineKeyboardButton(text="Электромеханик", callback_data='button639')
-    button640 = types.InlineKeyboardButton(text="Проектировщик электросистем", callback_data='button640')
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button634 = types.InlineKeyboardButton(text="Инженерия", callback_data='button634')
+    button635 = types.InlineKeyboardButton(text="Биология", callback_data='button635')
+    button636 = types.InlineKeyboardButton(text="Экономика", callback_data='button636')
+    button637 = types.InlineKeyboardButton(text="Информатика", callback_data='button637')
+    button638 = types.InlineKeyboardButton(text="Экология", callback_data='button638')
     bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
     keyboard.row(button634)
     keyboard.row(button635)
     keyboard.row(button636)
     keyboard.row(button637)
     keyboard.row(button638)
-    keyboard.row(button639)
-    keyboard.row(button640)
     keyboard.row(bt21)
     last_keyboard = keyboard
     return keyboard
 
+def start41():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button639 = types.InlineKeyboardButton(text="Механика ", callback_data='button639')
+    button640 = types.InlineKeyboardButton(text="Электротехника ", callback_data='button640')
+    button641 = types.InlineKeyboardButton(text="ИИ", callback_data='button641')
+    button642 = types.InlineKeyboardButton(text="Робототехника", callback_data='button642')
+    button643 = types.InlineKeyboardButton(text="3D-графика", callback_data='button643')
+    button644 = types.InlineKeyboardButton(text="Криптография ", callback_data='button644')
+    button645 = types.InlineKeyboardButton(text="Геодезия", callback_data='button645')
+    button646 = types.InlineKeyboardButton(text="Ознакомиться🔎", callback_data='button646')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button639)
+    keyboard.row(button640)
+    keyboard.row(button641)
+    keyboard.row(button642)
+    keyboard.row(button643)
+    keyboard.row(button644)
+    keyboard.row(button645)
+    keyboard.row(button646)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start42():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button0626 = types.InlineKeyboardButton(text="Инженер-механик", callback_data='button0626')
+    button0627 = types.InlineKeyboardButton(text="Мастер ремонта техники", callback_data='button0627')
+    button0628 = types.InlineKeyboardButton(text="Автомеханик", callback_data='button0628')
+    button0629 = types.InlineKeyboardButton(text="Авиатехник", callback_data='button0629')
+    button0630 = types.InlineKeyboardButton(text="Судовой механик", callback_data='button0630')
+    button0631 = types.InlineKeyboardButton(text="Машинист", callback_data='button0631')
+    button0632 = types.InlineKeyboardButton(text="Крановщик", callback_data='button0632')
+    button0633 = types.InlineKeyboardButton(text="Технолог", callback_data='button0633')
+    keyboard.row(button0626)
+    keyboard.row(button0627)
+    keyboard.row(button0628)
+    keyboard.row(button0629)
+    keyboard.row(button0630)
+    keyboard.row(button0631)
+    keyboard.row(button0632)
+    keyboard.row(button0633)
+    last_keyboard = keyboard
+    return keyboard
+#Электрик
+def start43():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button647 = types.InlineKeyboardButton(text="Инженер-электрик", callback_data='button647')
+    button648 = types.InlineKeyboardButton(text="Техник-электрик", callback_data='button648')
+    button649 = types.InlineKeyboardButton(text="Электромонтажник", callback_data='button649')
+    button650 = types.InlineKeyboardButton(text="Специалист по энергетике", callback_data='button650')
+    button651 = types.InlineKeyboardButton(text="НГЭ", callback_data='button651')
+    button652 = types.InlineKeyboardButton(text="Электромеханик", callback_data='button652')
+    button653 = types.InlineKeyboardButton(text="Проектировщик электросистем", callback_data='button653')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button647)
+    keyboard.row(button648)
+    keyboard.row(button649)
+    keyboard.row(button650)
+    keyboard.row(button651)
+    keyboard.row(button652)
+    keyboard.row(button653)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
+
+def start44():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button654 = types.InlineKeyboardButton(text="Механика ", callback_data='button654')
+    button655 = types.InlineKeyboardButton(text="Электротехника ", callback_data='button655')
+    button656 = types.InlineKeyboardButton(text="ИИ", callback_data='button656')
+    button657 = types.InlineKeyboardButton(text="Робототехника", callback_data='button657')
+    button658 = types.InlineKeyboardButton(text="3D-графика", callback_data='button658')
+    button659 = types.InlineKeyboardButton(text="Криптография ", callback_data='button659')
+    button660 = types.InlineKeyboardButton(text="Геодезия", callback_data='button660')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button654)
+    keyboard.row(button655)
+    keyboard.row(button656)
+    keyboard.row(button657)
+    keyboard.row(button658)
+    keyboard.row(button659)
+    keyboard.row(button660)
+    keyboard.row(bt21)
+    last_keyboard = keyboard
+    return keyboard
     
+
+
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline_message(call):
@@ -3995,7 +4017,7 @@ Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и
             reply_markup=start41()
             )
 
-        elif call.data == "button595":
+        elif call.data == "button639":
             bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
@@ -4058,7 +4080,7 @@ Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и
 Опытный технолог (5–10 лет и более) — от 60 000 до 100 000 рублей и выше в месяц.
 Специалист с высоким опытом и управленческими обязанностями — от 100 000 рублей и выше в месяц.''')
 
-        elif call.data == "button634":
+        elif call.data == "button640":
             bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
@@ -4105,4 +4127,31 @@ Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и
 средний уровень — 150 000–200 000 рублей;
 повышенный уровень — 200 000–350 000 рублей.''')
         
+        elif call.data == "button641":
+            bot.edit_message_text(
+            chat_id=call.message.chat.id,
+            message_id=call.message.message_id,
+            text="📚 Выберите интересующий вас раздел для ознакомления.",
+            reply_markup=start44()
+            )
+
+        elif call.data == 'button603':
+            bot.send_message(call.message.chat.id, "Механика -- это раздел физики, наука, изучающая движение материальных тел и взаимодействие между ними.")
+        elif call.data == 'button604':
+            bot.send_message(call.message.chat.id, "Электротехника -- это область науки и техники, которая связана с применением электрических и магнитных явлений для преобразования энергии, изменения физико-химических свойств вещества, передачи информации, а также с созданием и использованием электротехнических устройств. ")
+        elif call.data == 'button605':
+            bot.send_message(call.message.chat.id, "ИИ -- это Искусственный интеллект (ИИ) (англ. artificial intelligence, AI) — направление науки, которое занимается разработкой компьютерных систем, способных выполнять задачи, свойственные человеческому интеллекту. ")
+        elif call.data == 'button606':
+            bot.send_message(call.message.chat.id, "Робототехника -- это прикладная наука, занимающаяся разработкой и созданием роботов, а также исследующая их применение в различных сферах.")
+        elif call.data == 'button607':
+            bot.send_message(call.message.chat.id, "3D-графика -- это раздел компьютерной графики, посвящённый созданию изображений или видео путём моделирования объектов в трёх измерениях: высота, ширина и глубина. ")
+        elif call.data == 'button608':
+            bot.send_message(call.message.chat.id, "Криптография -- это наука о математических методах обеспечения конфиденциальности, целостности данных, аутентификации и шифрования. ")
+        elif call.data == 'button609':
+            bot.send_message(call.message.chat.id, "Геодезия -- это  наука, которая изучает фигуру, размеры и гравитационное поле Земли, а также измерения на земной поверхности для отображения её на планах и картах.")
+
+
+
+
+
 bot.infinity_polling()
