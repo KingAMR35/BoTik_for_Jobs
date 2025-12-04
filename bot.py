@@ -342,6 +342,26 @@ def start8():
     last_keyboard = keyboard
     return keyboard
 
+def start08():
+    global last_keyboard
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    button357 = types.InlineKeyboardButton(text="Веб-разработчик", callback_data='button357')
+    button358 = types.InlineKeyboardButton(text="Мобильный разработчик", callback_data='button358')
+    button359 = types.InlineKeyboardButton(text="Системный администратор", callback_data='button359')
+    button360 = types.InlineKeyboardButton(text="Администратор баз данных", callback_data='button360')
+    button361 = types.InlineKeyboardButton(text="Инженер по кибербезопасности", callback_data='button361')
+    button362 = types.InlineKeyboardButton(text="Инженер по DevOps", callback_data='button362')
+    bt21 = types.InlineKeyboardButton(text="Вернуться 🔙", callback_data="bt21")
+    keyboard.row(button357)
+    keyboard.row(button358)
+    keyboard.row(button359)
+    keyboard.row(button360)
+    keyboard.row(button361)
+    keyboard.row(button362)
+    keyboard.row(bt21)  
+    last_keyboard = keyboard
+    return keyboard
+
 def start9():
     global last_keyboard
     keyboard = types.InlineKeyboardMarkup(row_width=2)
@@ -2536,7 +2556,7 @@ def callback_inline_message(call):
             bot.send_message(call.message.chat.id, "Менеджер по корпоративным продажам -- это специалист, который отвечает за взаимодействие с ключевыми клиентами компании (B2B-сегмент). В отличие от обычного менеджера по продажам, он работает с крупными заказчиками, заключает долгосрочные контракты и выстраивает стратегические партнёрства.")
             bot.send_message(call.message.chat.id, "Средняя зарплата менеджера по корпоративным продажам в Самаре — 82 453 рубля, медианная — 84 929 рублей, модальная (наиболее часто встречающаяся) — 90 000 рублей.")
     
-        elif call.data == "button306":
+        elif call.data == "button305":
             bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
@@ -2575,7 +2595,7 @@ middle — 223 986 рублей;
 senior — 296 027 рублей;
 lead — 437 529 рублей.''')
             
-        elif call.data == "button307":
+        elif call.data == "button306":
             bot.edit_message_text(
             chat_id=call.message.chat.id,
             message_id=call.message.message_id,
