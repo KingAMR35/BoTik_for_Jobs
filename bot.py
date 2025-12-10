@@ -4,7 +4,7 @@ from telebot import types
 import os
 from dotenv import load_dotenv
 from api_service import FusionBrainAPI
-from game import MyTelegramBot
+
 
 load_dotenv()
 bot = telebot.TeleBot(os.getenv('TOKEN'))
@@ -4179,5 +4179,4 @@ Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и
 
 
 
-my_bot = MyTelegramBot((os.getenv('TOKEN')))
-my_bot.start_polling()
+bot.infinity_polling()
