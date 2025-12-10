@@ -19,15 +19,9 @@ class MyTelegramBot:
             def prompt(message):
                 prompt = message.text
                 chat_id = message.chat.id
-                if prompt in self.jobs:
-                    self.user_states[chat_id] = {'job': prompt, 'question_idx': 0}
                 
-                self.ask_next_question(chat_id)
-                elif chat_id in self.user_states:
-                    user_state = self.user_states[chat_id]
-                    answers = user_state.setdefault('answers', [])
-                    answers.append(prompt)
-                    self.ask_next_question(chat_id)
+                
+
 
     def start_polling(self):
         print("Бот запущен...")
