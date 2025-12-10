@@ -19,15 +19,9 @@ class MyTelegramBot:
             def prompt(message):
                 prompt = message.text
                 chat_id = message.chat.id
+
                 
-                
 
 
-    def start_polling(self):
-        print("Бот запущен...")
-        self.bot.polling(none_stop=True)
 
-if __name__ == "__main__":
-    TOKEN = 'YOUR_BOT_TOKEN'
-    my_bot = MyTelegramBot(TOKEN)
-    my_bot.start_polling()
+
