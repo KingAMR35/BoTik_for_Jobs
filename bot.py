@@ -4181,5 +4181,3 @@ Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и
 
 my_bot = MyTelegramBot((os.getenv('TOKEN')))
 my_bot.start_polling()
-
-bot.infinity_polling()
