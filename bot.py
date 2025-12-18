@@ -4,7 +4,7 @@ from telebot import types
 import os
 from dotenv import load_dotenv
 from api_service import FusionBrainAPI
-from AI import MyTelegramBot2
+from AI_service import *
 
 
 
@@ -13,19 +13,24 @@ load_dotenv()
 bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 
+
+bot_instance = MyTelegramBot2()
 bot.set_my_commands(
     commands=[
         telebot.types.BotCommand("start", "🚀 Запускает бота"),
         telebot.types.BotCommand("restart", "🔄 Перезагружает бота"),
         telebot.types.BotCommand("job_search", "🔍 Обычный поиск профессии"),
         telebot.types.BotCommand("job_deepsearch", "🔍🔥 Углублённый поиск профессии"),
-        telebot.types.BotCommand("job_AIsearch", " Поиск профессий с помощью ИИ"),
+        telebot.types.BotCommand("job_ai_search", "🔍🤖 Поиск профессий с помощью ИИ"),
         telebot.types.BotCommand("generate", "📸 Генерирует фото"),
         telebot.types.BotCommand("help", "📖 Полное описание всех команд"),
         telebot.types.BotCommand("info", "📝 Информация о боте"),
     ])
 image_counter = 0
 last_used = {}
+states = {}
+responses = {}
+profession_predictor = MyTelegramBot2()
 last_keyboard = None
 jobs = ["Менеджер", "Комментатор", "Спортивный юрист", "Арбитр", "Фитнес-тренер", "Спортивный психолог", "Каппер", "Учитель", "Заместитель директора", "Методист", "Библиотекарь", "Секретарь", "Инженер-техник", "Разработчик программного обеспечения", "Веб-разработчик", "Разработчик игр", "Аналитик данных", "Специалист по кибербезопасности", "Системный администратор", "Живописец", "Скульптор", "Графический дизайнер", "Концепт-художник", "Художник-постановщик", "Музыкант-исполнитель", "Композитор", "Дирижёр", "Музыкальный педагог", "Музыкальный терапевт", "Музыкальный менеджер", "Саунд-дизайнер",
         "Эколог", "Ландшафтный архитектор", "Экологический консультант", "Экологический инженер", "Гидролог", "Экологический юрист", "Урбанист-эколог", "Специалист по переработке", "Библиотекарь", "Писатель", "Редактор", "Литературный агент", "Критик", "Сотрудник книжного сайта", "Работник издательства", "Архитектурный визуализатор", "Инженер-конструктор", "Специалист по дизайну", "3D-моделлер", "Инженер-проектировщик", "Картограф", "Климатолог", "Геомаркетолог", "Менеджер по туризму", "Инженер-геолог", "Моряк", "Пилот", "Авиационный техник", "Логист", "Машинист", "Архитектор",
@@ -101,6 +106,40 @@ def version_info(call):
     keyboard_back.row(butt_back)
 
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=version_description, reply_markup=keyboard_back)
+
+@bot.message_handler(commands=['job_ai_search'])
+def start_ai_search(message):
+    states[message.chat.id] = 0
+    responses[message.chat.id] = {}  # очищаем предыдущие ответы
+    bot.send_message(message.chat.id, profession_predictor.QUESTIONS[0])
+
+
+@bot.message_handler(func=lambda m: True)
+def collect_user_input(message):
+    current_state = states.get(message.chat.id)
+    if current_state is None or current_state > len(profession_predictor.QUESTIONS):
+        return
+
+    if current_state == 0:
+        responses[message.chat.id]['activity_preference'] = message.text
+    elif current_state == 1:
+        responses[message.chat.id]['strengths'] = message.text
+    elif current_state == 2:
+        responses[message.chat.id]['work_style'] = message.text
+    elif current_state == 3:
+        responses[message.chat.id]['salary_expectation'] = message.text
+    elif current_state == 4:
+        responses[message.chat.id]['change_vs_stability'] = message.text
+
+    next_state = current_state + 1
+    if next_state >= len(profession_predictor.QUESTIONS):
+        prediction_result = profession_predictor.predict_profession(responses[message.chat.id])
+        bot.send_message(message.chat.id, f"Ваша рекомендуемая профессия: {prediction_result}")
+        del states[message.chat.id]
+    else:
+        bot.send_message(message.chat.id, profession_predictor.QUESTIONS[next_state])
+        states[message.chat.id] = next_state
+
 
 @bot.callback_query_handler(func=lambda call: call.data == 'back')
 def back_to_versions(call):
@@ -4183,10 +4222,7 @@ Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и
 
 
 
-
-
-
 if __name__ == "__main__":
-    # Создаем экземпляр класса и запускаем бота
-    bot_instance = MyTelegramBot2(os.getenv('TOKEN'))
-    bot_instance.run_bot()
+    # Запускаем основной бот
+    print("Бот запущен.")
+    bot.polling(none_stop=True)
