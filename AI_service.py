@@ -1,4 +1,3 @@
-# ai_service.py
 import base64
 from gigachat import GigaChat
 import os
