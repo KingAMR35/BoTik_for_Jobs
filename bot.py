@@ -4,10 +4,14 @@ from telebot import types
 import os
 from dotenv import load_dotenv
 from api_service import FusionBrainAPI
+from AI import MyTelegramBot2
+
+
 
 
 load_dotenv()
 bot = telebot.TeleBot(os.getenv('TOKEN'))
+
 
 bot.set_my_commands(
     commands=[
@@ -15,6 +19,7 @@ bot.set_my_commands(
         telebot.types.BotCommand("restart", "🔄 Перезагружает бота"),
         telebot.types.BotCommand("job_search", "🔍 Обычный поиск профессии"),
         telebot.types.BotCommand("job_deepsearch", "🔍🔥 Углублённый поиск профессии"),
+        telebot.types.BotCommand("job_AIsearch", " Поиск профессий с помощью ИИ"),
         telebot.types.BotCommand("generate", "📸 Генерирует фото"),
         telebot.types.BotCommand("help", "📖 Полное описание всех команд"),
         telebot.types.BotCommand("info", "📝 Информация о боте"),
@@ -4179,4 +4184,9 @@ Lead / Арт-директор (5+ лет) — 150 000–350 000 рублей и
 
 
 
-bot.infinity_polling()
+
+
+if __name__ == "__main__":
+    # Создаем экземпляр класса и запускаем бота
+    bot_instance = MyTelegramBot2(os.getenv('TOKEN'))
+    bot_instance.run_bot()
