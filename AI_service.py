@@ -9,7 +9,6 @@ encoded_credentials = base64.b64encode(b.encode()).decode()
 
 class MyTelegramBot2:
     def __init__(self):
-        # Список вопросов анкеты
         self.QUESTIONS = [
             "Какие виды деятельности приносят вам наибольшее удовольствие?",
             "Назовите вашу самую сильную сторону или талант.",

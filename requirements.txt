@@ -12,7 +12,7 @@ telegram==0.0.1
 
 telegramApi==1.5
 
-sqlite3==22.3.1
+sqlite3==3.39.4
 
 
 

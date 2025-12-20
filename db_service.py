@@ -1,0 +1,36 @@
+from AI_service import *
+import sqlite3
+
+
+class DB_service():
+
+    def __init__(self, db_name='survey.db'):
+        self.conn = sqlite3.connect(db_name)
+        self.cursor = self.conn.cursor()
+        self.create_table_if_not_exists()
+
+
+
+    def create_table_if_not_exists(self):
+        self.cursor.execute('''
+            CREATE TABLE IF NOT EXISTS survey_data (
+                user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                chat_id TEXT NOT NULL,
+                question TEXT NOT NULL,
+                answer TEXT NOT NULL,
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        self.conn.commit()
+
+    def add_survey_entry(self, chat_id, question, answer):
+        self.cursor.execute(
+            "INSERT INTO survey_data (chat_id, question, answer) VALUES (?, ?, ?)",
+            (chat_id, question, answer)
+        )
+        self.conn.commit()
+
+    def close_connection(self):
+        self.conn.close()
+
+
