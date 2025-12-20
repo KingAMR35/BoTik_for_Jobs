@@ -14,6 +14,6 @@ telegram==0.0.1
 
 telegramApi==1.5
 
-
+pillow == 12.0.0
 
 
