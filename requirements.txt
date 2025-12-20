@@ -1,5 +1,7 @@
 pyTelegramBotAPI==4.29.1
 
+SQLAlchemy == 2.0.45
+
 python-dotenv==1.1.1
 
 python-telegram-bot==22.5
@@ -12,7 +14,6 @@ telegram==0.0.1
 
 telegramApi==1.5
 
-sqlite3==3.39.4
 
 
 
