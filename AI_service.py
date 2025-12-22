@@ -26,7 +26,7 @@ class MyTelegramBot2:
         Salary Expectation: {answers['salary_expectation']}
         Change vs Stability: {answers['change_vs_stability']}
 
-        Based on these preferences, please suggest one or two suitable professions. Please answer in Russian
+        Based on these preferences, please suggest one or two suitable professions. Please answer in Russian.
         """
 
         with GigaChat(credentials=encoded_credentials, verify_ssl_certs=False) as giga:

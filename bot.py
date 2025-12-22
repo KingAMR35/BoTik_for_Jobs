@@ -4,17 +4,14 @@ from telebot import types
 import os
 from dotenv import load_dotenv
 from api_service import FusionBrainAPI
-from AI_service import *
-
-
+from AI_service import MyTelegramBot2
 
 
 load_dotenv()
 bot = telebot.TeleBot(os.getenv('TOKEN'))
-
-
-
 bot_instance = MyTelegramBot2()
+
+
 bot.set_my_commands(
     commands=[
         telebot.types.BotCommand("start", "🚀 Запускает бота"),
