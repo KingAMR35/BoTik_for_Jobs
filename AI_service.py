@@ -42,15 +42,17 @@ class JobQuiz:
     def job_quiz(self, job_name):
         prompt2 = f"""
         Job: {job_name}
-        Generate 5 questions about this field. Please answer in Russian.
+        Create 5 questions with a choice of answers. Please answer in Russian. Write without answers.
         """
         
         with GigaChat(credentials=encoded_credentials, verify_ssl_certs=False) as giga:
             response = giga.chat(prompt2)
-            quiz_questions = response.choices[0].message.content.strip().split("\n")
+            quiz_questions = response.choices[0].message.content.strip()
             
         return quiz_questions
     
+    def check_answers(self):
+        pass
 
 
 

@@ -116,38 +116,44 @@ def start_ai_search(message):
     responses[message.chat.id] = {}
     bot.send_message(message.chat.id, profession_predictor.QUESTIONS[0])
 
-@bot.message_handler(func=lambda m: True)
-def collect_user_input(message):
-    current_state = states.get(message.chat.id)
-    if current_state is None or current_state > len(profession_predictor.QUESTIONS):
-        return
+    @bot.message_handler(func=lambda m: True)
+    def collect_user_input(message):
+        current_state = states.get(message.chat.id)
+        if current_state is None or current_state > len(profession_predictor.QUESTIONS):
+            return
 
-    if current_state == 0:
-        responses[message.chat.id]['activity_preference'] = message.text
-    elif current_state == 1:
-        responses[message.chat.id]['strengths'] = message.text
-    elif current_state == 2:
-        responses[message.chat.id]['work_style'] = message.text
-    elif current_state == 3:
-        responses[message.chat.id]['salary_expectation'] = message.text
-    elif current_state == 4:
-        responses[message.chat.id]['change_vs_stability'] = message.text
+        if current_state == 0:
+            responses[message.chat.id]['activity_preference'] = message.text
+        elif current_state == 1:
+            responses[message.chat.id]['strengths'] = message.text
+        elif current_state == 2:
+            responses[message.chat.id]['work_style'] = message.text
+        elif current_state == 3:
+            responses[message.chat.id]['salary_expectation'] = message.text
+        elif current_state == 4:
+            responses[message.chat.id]['change_vs_stability'] = message.text
 
-    next_state = current_state + 1
-    if next_state >= len(profession_predictor.QUESTIONS):
-        prediction_result = profession_predictor.predict_profession(responses[message.chat.id])
-        bot.send_message(message.chat.id, f"Ваша рекомендуемая профессия: {prediction_result}")
-        del states[message.chat.id]
-    else:
-        bot.send_message(message.chat.id, profession_predictor.QUESTIONS[next_state])
-        states[message.chat.id] = next_state
+        next_state = current_state + 1
+        if next_state >= len(profession_predictor.QUESTIONS):
+            prediction_result = profession_predictor.predict_profession(responses[message.chat.id])
+            bot.send_message(message.chat.id, f"Ваша рекомендуемая профессия: {prediction_result}")
+            del states[message.chat.id]
+        else:
+            bot.send_message(message.chat.id, profession_predictor.QUESTIONS[next_state])
+            states[message.chat.id] = next_state
 
 @bot.message_handler(commands=['job_ai_quiz'])
 def start_ai_quiz(message):
-    states[message.chat.id] = 0
-    responses[message.chat.id] = {}
+    states[message.chat.id] = 'waiting_for_job'
     bot.send_message(message.chat.id, "Введите профессию, с которой хотите начать тестирование.")
     
+@bot.message_handler(func=lambda message: states.get(message.chat.id) == 'waiting_for_job')
+def handle_job_input(message):
+    job_name = message.text
+    quiz_questions = job_quiz.job_quiz(job_name)
+    del states[message.chat.id]
+    for question in quiz_questions:
+        bot.send_message(message.chat.id, question)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'back')
 def back_to_versions(call):
