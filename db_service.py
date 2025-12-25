@@ -1,13 +1,12 @@
 from AI_service import *
 import sqlite3
 
+DATABASE = ('survey.db')
 
 class DB_service():
 
-    def __init__(self, db_name='survey.db'):
-        self.conn = sqlite3.connect(db_name)
-        self.cursor = self.conn.cursor()
-        self.create_table_if_not_exists()
+    def __init__(self, database):
+        self.database = database
 
 
 
@@ -24,11 +23,14 @@ class DB_service():
         self.conn.commit()
 
     def add_survey_entry(self, chat_id, question, answer):
-        self.cursor.execute(
+        conn = sqlite3.connect(self.database)
+        with conn:
+            cur = conn.cursor()
+            self.cursor.execute(
             "INSERT INTO survey_data (chat_id, question, answer) VALUES (?, ?, ?)",
             (chat_id, question, answer)
-        )
-        self.conn.commit()
+            )
+            self.conn.commit()
 
     def close_connection(self):
         self.conn.close()
