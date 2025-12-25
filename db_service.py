@@ -1,12 +1,12 @@
 from AI_service import *
 from dotenv import load_dotenv
-
+import os
 import sqlite3
 
-DATABASE = ('survey.db')
+load_dotenv()
+DATABASE = os.getenv('survey.db')
 
 class DB_service():
-
     def __init__(self, database):
         self.database = database
 
