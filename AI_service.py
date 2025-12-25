@@ -2,6 +2,7 @@ import base64
 from gigachat import GigaChat
 import os
 from dotenv import load_dotenv
+from db_service import *
 
 load_dotenv()
 b = os.getenv("CREDENTIALS")
@@ -40,14 +41,14 @@ class ProfessionPredictor:
 class JobQuiz:
     def job_quiz(self, job_name):
         prompt2 = f"""
-        Job: {job_name['Job']}
+        Job: {job_name}
         Generate 5 questions about this field. Please answer in Russian.
         """
-
+        
         with GigaChat(credentials=encoded_credentials, verify_ssl_certs=False) as giga:
             response = giga.chat(prompt2)
             quiz_questions = response.choices[0].message.content.strip().split("\n")
-
+            
         return quiz_questions
     
 

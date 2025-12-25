@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 from api_service import FusionBrainAPI
 from AI_service import ProfessionPredictor
 from AI_service import JobQuiz
-
+from db_service import *
 
 load_dotenv()
 bot = telebot.TeleBot(os.getenv('TOKEN'))
-
+DATABASE = os.getenv('DATABASE')
 
 
 bot.set_my_commands(
@@ -33,6 +33,7 @@ responses = {}
 profession_predictor = ProfessionPredictor()
 job_quiz = JobQuiz()
 last_keyboard = None
+db = DB_service(DATABASE)
 
 @bot.callback_query_handler(func=lambda call: call.data in ['bt21'] )
 def back_to_start(call):
@@ -70,9 +71,9 @@ def help_bot(message):
                       "/restart 🔄 — Перезапускает бота.\n\n"
                       "/job_search 🔍 — Легкий старт! Найдите свою идеальную профессию простым поиском.\n\n"
                       "/job_deepsearch 🔍🔥 — Погружайтесь глубоко! Большой выбор профессий и удобный интерфейс для детального поиска.\n\n"
+                      "/job_ai_search🔍🤖 — идеальный советник по выбору профессии с помощью искусственного интеллекта!\n\n"  
                       "/generate 🎨 — Творческая свобода! Генерируйте любые красочные картинки с искусственным интеллектом.\n\n"
-                      "/info 💡 — Команда для получения общей информации о проекте, а также обновления и деплой новых команд.\n\n"
-                      "/job_ai_search🔍🤖 — идеальный советник по выбору профессии с помощью искусственного интеллекта!\n\n"                       
+                      "/info 💡 — Команда для получения общей информации о проекте, а также обновления и деплой новых команд.\n\n"                   
                       "Удачи в поиске своего призвания! ✨")
     
 @bot.message_handler(commands=["info"])
@@ -115,12 +116,6 @@ def start_ai_search(message):
     responses[message.chat.id] = {}
     bot.send_message(message.chat.id, profession_predictor.QUESTIONS[0])
 
-@bot.message_handler(commands=['job_ai_quiz'])
-def start_ai_quiz(message):
-    states[message.chat.id] = 0
-    responses[message.chat.id] = {}
-    bot.send_message(message.chat.id, "Введите профессию, с которой хотите начать тестирование.")
-
 @bot.message_handler(func=lambda m: True)
 def collect_user_input(message):
     current_state = states.get(message.chat.id)
@@ -146,6 +141,13 @@ def collect_user_input(message):
     else:
         bot.send_message(message.chat.id, profession_predictor.QUESTIONS[next_state])
         states[message.chat.id] = next_state
+
+@bot.message_handler(commands=['job_ai_quiz'])
+def start_ai_quiz(message):
+    states[message.chat.id] = 0
+    responses[message.chat.id] = {}
+    bot.send_message(message.chat.id, "Введите профессию, с которой хотите начать тестирование.")
+    
 
 @bot.callback_query_handler(func=lambda call: call.data == 'back')
 def back_to_versions(call):
