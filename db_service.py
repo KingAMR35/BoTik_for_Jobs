@@ -1,4 +1,6 @@
 from AI_service import *
+from dotenv import load_dotenv
+
 import sqlite3
 
 DATABASE = ('survey.db')
